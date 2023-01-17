@@ -1,0 +1,96 @@
+html {
+  height: 130%;
+  font-family: "Jura", sans-serif;
+}
+
+body {
+  background-color: #0a0120;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  height: auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid #7dd7bd;
+  background-color: #0a0120;
+}
+
+.login label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: #7dd7bd;
+}
+
+.login input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 40%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0a0120;
+  outline: none;
+  border: 1px solid #7dd7bd;
+  color: #7dd7bd;
+  transition: ease-in-out 700ms;
+}
+
+.bottomButtons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 40%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #0a0120;
+  background-color: #7dd7bd;
+  color: #0a0120;
+  transition: ease-in-out 300ms;
+}
+
+.bottomButtons:hover {
+  background-color: #0a0120;
+  color: #7dd7bd;
+  border: 1px solid #7dd7bd;
+  cursor: pointer;
+}
+
+.buttons {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#title1 {
+  font-family: "Jura", sans-serif;
+  font-weight: bolder;
+  font-size: 3vw;
+  color: #E9FEF7;
+  z-index: 1;
+}
+
+#title2 {
+  font-family: "Jura", sans-serif;
+  font-weight: bolder;
+  font-size: 2vw;
+  color: #7dd7bd;
+}
+
+#errormessage {
+  color: red;
+}

@@ -1,0 +1,242 @@
+html {
+  height: 100%;
+  user-select: none;
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  color: #e9fef7;
+  letter-spacing: 1px;
+}
+
+body {
+  margin: 0;
+  background-color: #e9fef7;
+  width: 100%;
+}
+
+.cardList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.card {
+  width: 700px;
+  height: auto;
+  background-color: #0a0120;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  height: auto;
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #7dd7bd;
+}
+
+.header p {
+  transform-origin: center;
+  color: #0a0120;
+  transform: rotate(-90deg);
+}
+
+.panel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.attributes {
+  height: auto;
+  width: 40%;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.attribute {
+  margin: 5px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.imgs {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgs img {
+  width: 260px;
+  height: 160px;
+  padding: 20px;
+}
+
+.dButton {
+  background-color: #0a0120;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dButton p {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  outline: none;
+  border: 1px solid #7dd7bd;
+  background-color: #0a0120;
+  color: #7dd7bd;
+  transition: ease-in-out 300ms;
+  font-family: "Jura", sans-serif;
+}
+
+.dButton p:hover {
+  background-color: #7dd7bd;
+  color: #0a0120;
+  cursor: pointer;
+}
+
+.sideButtonsWrapper {
+  position: fixed;
+  top: 50vh;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideButton {
+  background-color: #0a0120;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sideButton img {
+  width: 30px;
+}
+
+.tooltip {
+  z-index: 101;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #0a0120;
+  color: #7dd7bd;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  top: -5px;
+  left: 105%;
+  z-index: 101;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.stopped {
+  color: red;
+}
+
+.running {
+  color: rgb(18, 211, 18);
+}
+
+.maintenance {
+  color: yellow;
+}
+
+.no-turbines {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-turbines p {
+  font-size: 30px;
+  color: #0a0120;
+  margin: auto;
+}
+
+#csvfile-input{
+  display:none;
+}
+
+
+.map-wrapper {
+  width: 70%;
+  border: 1px solid #7dd7bd;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #0a0120;
+}
+
+.map-header {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #7dd7bd;
+}
+
+.map-header img {
+  transition: ease-in-out 300ms;
+}
+
+.map-header img:hover {
+  cursor: pointer;
+}
+
+.map-header img.rotate {
+  transform: rotate(180deg);
+}
+
+#map-content {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#map-content.expand {
+  max-height: 800px;
+}
+
+#map {
+  height: 700px;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

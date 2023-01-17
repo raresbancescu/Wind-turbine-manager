@@ -1,0 +1,8 @@
+<div class="notification" id="id<%= notification.id %>">
+    <%= notification.buyer.firstName %> <%= notification.buyer.lastName %> would
+    like to purchase turbine <%=notification.turbine.name %>
+  <div>
+    <button onclick="accept(`<%= notification.turbine._id %>`, `<%= notification.buyer._id %>`, `<%= notification.id %>`)">Accept</button>
+    <button onclick="refuse(`<%= notification.id %>`)">Decline</button>
+  </div>
+</div>

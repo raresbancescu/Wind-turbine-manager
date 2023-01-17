@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <link rel="icon" href="https://webprojectrdv.s3.amazonaws.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../public/css/registerStyle.css">
+  <script src="../../public/scripts/protectedRouteLoginScript.js"></script>
+  <head>
+    <title>Register</title>
+  </head>
+  <body>
+    <p id="title1">
+      Wind
+      <span id="title2">Turbine Management</span>
+    </p>
+    <form class="signup">
+      <label for="chk" aria-hidden="true">Sign up</label>
+      <input type="text" id="nume" name="nume" placeholder="First Name" />
+      <input type="text" id="prenume" name="prenume" placeholder="Last Name" />
+      <input type="text" id="firma" name="Firma" placeholder="Company" />
+      <input type="text" id="cnp" name="CNP" placeholder="CNP" />
+      <input type="mail" id="registermail" name="mail" placeholder="Mail" />
+      <input type="tel" id="phone" name="phone" placeholder="Phone number" />
+      <input type="text" id="adresa" name="adresa" placeholder="Address" />
+      <input
+        type="password"
+        id="registerpass"
+        name="pswd"
+        placeholder="Password"
+      />
+      <input id="sign" type="submit" value="Sign Up" />
+      <p id="errormessage"></p>
+
+      <div class="buttons">
+        <button
+          class="bottomButtons"
+          type="button"
+          onclick="location.href='/pages/resetpass'"
+        >
+          Forgot Password
+        </button>
+        <button
+          class="bottomButtons"
+          type="button"
+          onclick="location.href='/pages/login'"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+    <script src="../../public/scripts/registerScript.js"></script>
+
+  </body>
+</html>

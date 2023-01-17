@@ -1,0 +1,37 @@
+<% var dir = process.cwd() %>
+<div onclick="showPublicTurbine('<%= turbine.turbineData._id %>','<%= turbine.turbineData.userId %>')" class="turbine">
+  <div class="header">
+     <% if(turbine.turbineData.turbineState === 'Running'){ %>
+      <div id="id<%= turbine.turbineData._id %>" class="spinner"></div>
+    <% } else{ %>  
+      <div class="spinner" style="visibility: hidden"></div>
+    <% } %>
+    <p><%= turbine.turbineData.name %></p>
+    <p style="visibility: hidden"></p>
+  </div>
+  <div class="content">
+    <p>Location: <%= turbine.location %></p>
+    <p>Latitude: <%= turbine.turbineData.latitude %></p>
+    <p>Longitude: <%= turbine.turbineData.longitude %></p>
+    <p>Terrain: <%= turbine.turbineData.terrain %></p>
+  </div>
+</div>
+
+<div class="popup" id="<%=turbine.turbineData._id %>">
+  <div class="fields">
+    <p><%= turbine.turbineData.name %></p>
+    <p id="company"></p>
+    <p>Construction date: <%= turbine.turbineData.constructionYear.substring(0, 10) %></p>
+    <p id="email" ></p>
+    <p id="telefon"></p>
+    <p>Suitability: <%= turbine.turbineData.suitability %></p>
+    <div class="buttons">
+      <button onclick="makeOffer(`<%= userId %>`, `<%= turbine.turbineData.userId %>`, `<%= turbine.turbineData._id %>`)" class="dButton">Purchase</button>
+      <button class="dButton" onclick="closePopup(`<%=turbine.turbineData._id %>`)">Close</button>
+    </div>
+  </div>
+  <div class="images">
+    <img src="<%= turbine.turbineData.imageLink %>" alt="turbine image placeholder" />
+    <%- include (dir + '/views/partials/cumulativeChart', chart) %>
+  </div>
+</div>

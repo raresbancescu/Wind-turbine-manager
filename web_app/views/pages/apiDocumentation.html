@@ -1,0 +1,3221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Turbine Web Manager</title>
+    <style type="text/css">
+      body {
+        font-family: Trebuchet MS, sans-serif;
+        font-size: 15px;
+        color: #444;
+        margin-right: 24px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      hr {
+        height: 1px;
+        border: 0;
+        color: #ddd;
+        background-color: #ddd;
+      }
+
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+
+      .license-url {
+        margin-left: 20px;
+      }
+
+      .model {
+        margin: 0 0 0px 20px;
+      }
+
+      .method {
+        margin-left: 20px;
+      }
+
+      .method-notes {
+        margin: 10px 0 20px 0;
+        font-size: 90%;
+        color: #555;
+      }
+
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+
+      .http-method {
+        text-transform: uppercase;
+      }
+
+      pre.get {
+        background-color: #0f6ab4;
+      }
+
+      pre.post {
+        background-color: #10a54a;
+      }
+
+      pre.put {
+        background-color: #c5862b;
+      }
+
+      pre.delete {
+        background-color: #a41e22;
+      }
+
+      .huge {
+        color: #fff;
+      }
+
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      code {
+        white-space: pre;
+      }
+
+      .nickname {
+        font-weight: bold;
+      }
+
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+
+      .up {
+        float: right;
+      }
+
+      .parameter {
+        width: 500px;
+      }
+
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+
+      .param-type {
+        font-style: italic;
+      }
+
+      .param-enum-header {
+        width: 700px;
+        padding: 0 0 0 60px;
+        color: #777;
+        font-weight: bold;
+      }
+
+      .param-enum {
+        width: 700px;
+        padding: 0 0 0 80px;
+        color: #777;
+        font-style: italic;
+      }
+
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+
+      .field-items {
+        padding: 0 0 15px 0;
+        margin-bottom: 15px;
+      }
+
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+
+      .param-header {
+        font-weight: bold;
+      }
+
+      .method-tags {
+        text-align: right;
+      }
+
+      .method-tag {
+        background: none repeat scroll 0% 0% #24a600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Turbine Web Manager</h1>
+    <div class="app-desc">Api for Turbine Web Manager app</div>
+   
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">
+      BasePath:localhost:5000/api
+    </div>
+   
+    <h2>Access</h2>
+
+    <h2><a name="__Methods">Methods</a></h2>
+    [ Jump to <a href="#__Models">Models</a> ]
+
+    <h3>Table of Contents</h3>
+    <div class="method-summary"></div>
+    <h4><a href="#Default">Default</a></h4>
+    <ul>
+      <li>
+        <a href="#turbinesDataTurbineidGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/data/{turbineid}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesDataTurbineidNewGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/data/{turbineid}/new</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesFilterUserIdqueryStringGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/filter/{userId}queryString</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesFilterqueryStringGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/filterqueryString</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesGet"
+          ><code><span class="http-method">get</span> /turbines</code></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesNewdataTurbineIdPut"
+          ><code
+            ><span class="http-method">put</span>
+            /turbines/newdata/{turbineId}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesPost"
+          ><code><span class="http-method">post</span> /turbines</code></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesPrivateTurbineIdCsvGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/private/{turbineId}/csv</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesPrivateUserIdGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/private/{userId}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesPrivateUserIdTurbineNameGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/private/{userId}/{turbineName}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesPublicGet"
+          ><code><span class="http-method">get</span> /turbines/public</code></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesPublicUserIdTurbineNameGet"
+          ><code
+            ><span class="http-method">get</span>
+            /turbines/public/{userId}/{turbineName}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesTurbineIdDelete"
+          ><code
+            ><span class="http-method">delete</span> /turbines/{turbineId}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesTurbineIdGet"
+          ><code
+            ><span class="http-method">get</span> /turbines/{turbineId}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#turbinesTurbineIdPut"
+          ><code
+            ><span class="http-method">put</span> /turbines/{turbineId}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersAlertsGet"
+          ><code><span class="http-method">get</span> /users/alerts</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersAlertsIdDelete"
+          ><code
+            ><span class="http-method">delete</span> /users/alerts/{id}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersAlertsPost"
+          ><code><span class="http-method">post</span> /users/alerts</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersCsvGet"
+          ><code><span class="http-method">get</span> /users/csv</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersGet"
+          ><code><span class="http-method">get</span> /users</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersIdAlertsGet"
+          ><code
+            ><span class="http-method">get</span> /users/{id}/alerts</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersIdDelete"
+          ><code><span class="http-method">delete</span> /users/{id}</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersIdGet"
+          ><code><span class="http-method">get</span> /users/{id}</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersIdNotificationsGet"
+          ><code
+            ><span class="http-method">get</span>
+            /users/{id}/notifications</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersIdPut"
+          ><code><span class="http-method">put</span> /users/{id}</code></a
+        >
+      </li>
+      <li>
+        <a href="#usersLoginMailPasswordGet"
+          ><code
+            ><span class="http-method">get</span>
+            /users/login/{mail}/{password}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersMailMailGet"
+          ><code
+            ><span class="http-method">get</span> /users/mail/{mail}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersNotificationsGet"
+          ><code
+            ><span class="http-method">get</span> /users/notifications</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersNotificationsIdDelete"
+          ><code
+            ><span class="http-method">delete</span>
+            /users/notifications/{id}</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersNotificationsPost"
+          ><code
+            ><span class="http-method">post</span> /users/notifications</code
+          ></a
+        >
+      </li>
+      <li>
+        <a href="#usersPost"
+          ><code><span class="http-method">post</span> /users</code></a
+        >
+      </li>
+    </ul>
+
+    <h1><a name="Default">Default</a></h1>
+    <div class="method">
+      <a name="turbinesDataTurbineidGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/data/{turbineid}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesDataTurbineidGet</span>)
+      </div>
+      <div class="method-notes">
+        Gets all the time data for turbine with a specific id
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineid (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineData">turbineData</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "windSpeed" : 120,
+  "turbineWear" : 8,
+  "powerGenerated" : 120,
+  "eficiency" : 60,
+  "timeStamp" : "10-12-2022"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineData">turbineData</a>
+      <h4 class="field-label">404</h4>
+      No turbine data for turbine with id 321bfgjrf5467jbmfj54gnbh
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesDataTurbineidNewGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/data/{turbineid}/new</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesDataTurbineidNewGet</span>)
+      </div>
+      <div class="method-notes">
+        Gets the newest registered data for turbine with a specific id
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineid (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineData">turbineData</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "windSpeed" : 120,
+  "turbineWear" : 8,
+  "powerGenerated" : 120,
+  "eficiency" : 60,
+  "timeStamp" : "10-12-2022"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineData">turbineData</a>
+      <h4 class="field-label">404</h4>
+      No turbine data for turbine with id 321bfgjrf5467jbmfj54gnbh
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesFilterUserIdqueryStringGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/filter/{userId}queryString</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesFilterUserIdqueryStringGet</span>)
+      </div>
+      <div class="method-notes">
+        Filter the owned turbines based on name, interval of year, turbine
+        state. They should be put in the query string in the next format
+        [?name=regex:name&amp;year=gte:2000t&amp;year=2020:test&amp;turbineState=running]
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">userId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineResponse">turbineResponse</a>
+      <h4 class="field-label">404</h4>
+      Turbine with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesFilterqueryStringGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/filterqueryString</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesFilterqueryStringGet</span>)
+      </div>
+      <div class="method-notes">
+        Filter the public turbines based on name, interval of year, turbine
+        state. They should be put in the query string in the next format
+        [?name=regex:name&amp;company=Rares
+        company&amp;year=gte:2000t&amp;year=2020:test&amp;turbineState=running]
+      </div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineResponse">turbineResponse</a>
+      <h4 class="field-label">404</h4>
+      Turbine with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesGet</span>)
+      </div>
+      <div class="method-notes">Get all turbines info</div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">200</h4>
+      Succes
+      <a href="#turbineResponse">turbineResponse</a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesNewdataTurbineIdPut"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="put"
+        ><code class="huge"><span class="http-method">put</span> /turbines/newdata/{turbineId}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesNewdataTurbineIdPut</span>)
+      </div>
+      <div class="method-notes">
+        Puts a new turbine data instance in AllTurbineData
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#turbineData_inner">turbineData_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineData">turbineData</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "windSpeed" : 120,
+  "turbineWear" : 8,
+  "powerGenerated" : 120,
+  "eficiency" : 60,
+  "timeStamp" : "10-12-2022"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#turbineData">turbineData</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+
+      <h4 class="field-label">422</h4>
+      Turbine with id
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesPost"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="post"
+        ><code class="huge"><span class="http-method">post</span> /turbines</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesPost</span>)
+      </div>
+      <div class="method-notes">Create a turbine for the logged user</div>
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#turbine_inner">turbine_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#turbineResponse">turbineResponse</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+
+      <h4 class="field-label">422</h4>
+      The referenced userId 62a7134243c43243243211ds doesn&#x27;t exists in the
+      database
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesPrivateTurbineIdCsvGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/private/{turbineId}/csv</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesPrivateTurbineIdCsvGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the informations for all private turbine based on a user id (
+        all the turbines a user own)
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        array[<a href="#inline_response_201">inline_response_201</a>]
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre
+        class="example"
+      ><code>"62b084bede70d8644cd3628c,62ac81d7dc23f97bb4aa7179,Turbine_France,2012-06-23T00:00:00.000Z,https://www.azom.com/images/Article_Images/ImageForArticle_21371_16457084545525256.jpg,46.34217753926488,2.3882021371256545,504,Peaty,91.5,true,Running"</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesPrivateUserIdGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/private/{userId}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesPrivateUserIdGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the information for private turbines based on user id
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">userId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineResponse">turbineResponse</a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesPrivateUserIdTurbineNameGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/private/{userId}/{turbineName}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesPrivateUserIdTurbineNameGet</span>)
+      </div>
+      <div class="method-notes">
+        Gets a user private turbine with the specified name
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">userId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+        <div class="param">turbineName (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineResponse">turbineResponse</a>
+      <h4 class="field-label">404</h4>
+      Turbine with name {turbineName} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesPublicGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/public</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesPublicGet</span>)
+      </div>
+      <div class="method-notes">Get all public turbines info</div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">200</h4>
+      Succes
+      <a href="#turbineResponse">turbineResponse</a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesPublicUserIdTurbineNameGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/public/{userId}/{turbineName}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesPublicUserIdTurbineNameGet</span>)
+      </div>
+      <div class="method-notes">
+        Gets a user public turbine with the specified name
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">userId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+        <div class="param">turbineName (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineResponse">turbineResponse</a>
+      <h4 class="field-label">404</h4>
+      Turbine with name {turbineName} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesTurbineIdDelete"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="delete"
+        ><code class="huge"><span class="http-method">delete</span> /turbines/{turbineId}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesTurbineIdDelete</span>)
+      </div>
+      <div class="method-notes">Delete the turbine with specified id</div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">204</h4>
+      succes
+      <a href="#"></a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesTurbineIdGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /turbines/{turbineId}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesTurbineIdGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the informations for a turbine based on turbine id
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#turbineResponse">turbineResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "fgt4534243c43243243hgr54",
+  "userId" : "62a7134243c43243243211ds",
+  "name" : "Turbine_california",
+  "constructionYear" : 2020,
+  "imageLink" : "https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg",
+  "latitude" : 39.4,
+  "longitude" : 82.6,
+  "terrain" : "Field",
+  "suitability" : 70,
+  "isPublic" : false,
+  "turbineState" : "Running"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#turbineResponse">turbineResponse</a>
+      <h4 class="field-label">404</h4>
+      Turbine with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="turbinesTurbineIdPut"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="put"
+        ><code class="huge"><span class="http-method">put</span> /turbines/{turbineId}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">turbinesTurbineIdPut</span>)
+      </div>
+      <div class="method-notes">
+        Modify a turbine props with an specific turbine id (Body values are
+        optional, you can choose what you want to change)
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">turbineId (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#turbine_inner">turbine_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#studentResponse">studentResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "62a7134243c43243243211ds",
+  "firstName" : "Rares",
+  "lastName" : "Bancescu",
+  "company" : "rares Company",
+  "CNP" : 5123984563132,
+  "mail" : "raresbancescu@yahoo.com",
+  "phone" : 745128654,
+  "adress" : "Str. pacii",
+  "birthDate" : "13-07-2001",
+  "password" : "098f6bcd4621d373cade4e832627b4f6"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#studentResponse">studentResponse</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+
+      <h4 class="field-label">422</h4>
+      Turbine with id
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersAlertsGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/alerts</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersAlertsGet</span>)
+      </div>
+      <div class="method-notes">Get all the alerts avalable in the app</div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#alert">alert</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "idUser" : "62a7134243c43243243211ds",
+  "idTurbine" : "43sdf123gjh67854g34fd34d",
+  "timestamp" : 1546543414765
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">200</h4>
+      Succes
+      <a href="#alert">alert</a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersAlertsIdDelete"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="delete"
+        ><code class="huge"><span class="http-method">delete</span> /users/alerts/{id}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersAlertsIdDelete</span>)
+      </div>
+      <div class="method-notes">Delete the alert with specified id</div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">204</h4>
+      succes
+      <a href="#"></a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersAlertsPost"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="post"
+        ><code class="huge"><span class="http-method">post</span> /users/alerts</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersAlertsPost</span>)
+      </div>
+      <div class="method-notes">Create a new alert</div>
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#alert_inner">alert_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#alert">alert</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "idUser" : "62a7134243c43243243211ds",
+  "idTurbine" : "43sdf123gjh67854g34fd34d",
+  "timestamp" : 1546543414765
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#alert">alert</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+
+      <h4 class="field-label">422</h4>
+      The buyer/seller id 62a7134243c43243243211ds doesn&#x27;t exist in the
+      database
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersCsvGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/csv</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersCsvGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the information about all users in csv format
+      </div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        array[<a href="#inline_response_200">inline_response_200</a>]
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre
+        class="example"
+      ><code>"62ac81d7dc23f97bb4aa7179,Rares,Bancescu,rares Company,5030404127001,raresbancescu@yahoo.com,0765434532,Str pacii,1903-04-03T22:15:36.000Z"</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">200</h4>
+      Succes
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users</code></pre>
+      </div>
+      <div class="method-summary">(<span class="nickname">usersGet</span>)</div>
+      <div class="method-notes">Get all the information about all users</div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#studentResponse">studentResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "62a7134243c43243243211ds",
+  "firstName" : "Rares",
+  "lastName" : "Bancescu",
+  "company" : "rares Company",
+  "CNP" : 5123984563132,
+  "mail" : "raresbancescu@yahoo.com",
+  "phone" : 745128654,
+  "adress" : "Str. pacii",
+  "birthDate" : "13-07-2001",
+  "password" : "098f6bcd4621d373cade4e832627b4f6"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">200</h4>
+      Succes
+      <a href="#studentResponse">studentResponse</a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersIdAlertsGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/{id}/alerts</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersIdAlertsGet</span>)
+      </div>
+      <div class="method-notes">Gets the alerts of user identified by id</div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#alert">alert</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "idUser" : "62a7134243c43243243211ds",
+  "idTurbine" : "43sdf123gjh67854g34fd34d",
+  "timestamp" : 1546543414765
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#alert">alert</a>
+      <h4 class="field-label">404</h4>
+      User with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersIdDelete"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="delete"
+        ><code class="huge"><span class="http-method">delete</span> /users/{id}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersIdDelete</span>)
+      </div>
+      <div class="method-notes">Delete the user with specified id</div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">204</h4>
+      succes
+      <a href="#"></a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersIdGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/{id}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersIdGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the informations for a user based on user id
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#studentResponse">studentResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "62a7134243c43243243211ds",
+  "firstName" : "Rares",
+  "lastName" : "Bancescu",
+  "company" : "rares Company",
+  "CNP" : 5123984563132,
+  "mail" : "raresbancescu@yahoo.com",
+  "phone" : 745128654,
+  "adress" : "Str. pacii",
+  "birthDate" : "13-07-2001",
+  "password" : "098f6bcd4621d373cade4e832627b4f6"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#studentResponse">studentResponse</a>
+      <h4 class="field-label">404</h4>
+      User with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersIdNotificationsGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/{id}/notifications</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersIdNotificationsGet</span>)
+      </div>
+      <div class="method-notes">
+        Gets the notifications of user identified by id
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#notification">notification</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "32bnh12h6tfv7854g34fd34d",
+  "idBuyer" : "62a7134243c43243243211ds",
+  "idSeller" : "43sdf123gjh67854g34fd34d",
+  "idTurbine" : "321bfgjrf5467jbmfj54gnbh"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#notification">notification</a>
+      <h4 class="field-label">404</h4>
+      User with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersIdPut"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="put"
+        ><code class="huge"><span class="http-method">put</span> /users/{id}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersIdPut</span>)
+      </div>
+      <div class="method-notes">
+        Modify a user with a specific id props (Body values are optional, you
+        can choose what you want to change)
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#student_inner">student_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#studentResponse">studentResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "62a7134243c43243243211ds",
+  "firstName" : "Rares",
+  "lastName" : "Bancescu",
+  "company" : "rares Company",
+  "CNP" : 5123984563132,
+  "mail" : "raresbancescu@yahoo.com",
+  "phone" : 745128654,
+  "adress" : "Str. pacii",
+  "birthDate" : "13-07-2001",
+  "password" : "098f6bcd4621d373cade4e832627b4f6"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#studentResponse">studentResponse</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+
+      <h4 class="field-label">422</h4>
+      User with id 62a7134243c43243243211ds doesn&#x27;t exists in the database
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersLoginMailPasswordGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/login/{mail}/{password}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersLoginMailPasswordGet</span>)
+      </div>
+      <div class="method-notes">
+        Used for validation at login(if mail and password match)
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">mail (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+        <div class="param">password (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#mailAndPass">mailAndPass</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "mail" : "Rares",
+  "password" : "parola"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      succes
+      <a href="#mailAndPass">mailAndPass</a>
+      <h4 class="field-label">404</h4>
+      User with id ${id} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersMailMailGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/mail/{mail}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersMailMailGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the information for a user based on email
+      </div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">mail (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#studentResponse">studentResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "62a7134243c43243243211ds",
+  "firstName" : "Rares",
+  "lastName" : "Bancescu",
+  "company" : "rares Company",
+  "CNP" : 5123984563132,
+  "mail" : "raresbancescu@yahoo.com",
+  "phone" : 745128654,
+  "adress" : "Str. pacii",
+  "birthDate" : "13-07-2001",
+  "password" : "098f6bcd4621d373cade4e832627b4f6"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Succes
+      <a href="#studentResponse">studentResponse</a>
+      <h4 class="field-label">404</h4>
+      User with mail ${mail} not found
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersNotificationsGet"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="get"
+        ><code class="huge"><span class="http-method">get</span> /users/notifications</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersNotificationsGet</span>)
+      </div>
+      <div class="method-notes">
+        Get all the notifications avalable in the app
+      </div>
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#notification">notification</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "32bnh12h6tfv7854g34fd34d",
+  "idBuyer" : "62a7134243c43243243211ds",
+  "idSeller" : "43sdf123gjh67854g34fd34d",
+  "idTurbine" : "321bfgjrf5467jbmfj54gnbh"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">200</h4>
+      Succes
+      <a href="#notification">notification</a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersNotificationsIdDelete"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="delete"
+        ><code class="huge"><span class="http-method">delete</span> /users/notifications/{id}</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersNotificationsIdDelete</span>)
+      </div>
+      <div class="method-notes">Delete the notification with specified id</div>
+
+      <h3 class="field-label">Path parameters</h3>
+      <div class="field-items">
+        <div class="param">id (required)</div>
+
+        <div class="param-desc">
+          <span class="param-type">Path Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">204</h4>
+      succes
+      <a href="#"></a>
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersNotificationsPost"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="post"
+        ><code class="huge"><span class="http-method">post</span> /users/notifications</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersNotificationsPost</span>)
+      </div>
+      <div class="method-notes">Create a new notification (register user)</div>
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#notification_inner">notification_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#notification">notification</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "32bnh12h6tfv7854g34fd34d",
+  "idBuyer" : "62a7134243c43243243211ds",
+  "idSeller" : "43sdf123gjh67854g34fd34d",
+  "idTurbine" : "321bfgjrf5467jbmfj54gnbh"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#notification">notification</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+
+      <h4 class="field-label">422</h4>
+      The buyer/seller id 62a7134243c43243243211ds doesn&#x27;t exist in the
+      database
+    </div>
+    <!-- method -->
+    <hr />
+    <div class="method">
+      <a name="usersPost"></a>
+      <div class="method-path">
+        <a class="up" href="#__Methods">Up</a>
+        <pre
+          class="post"
+        ><code class="huge"><span class="http-method">post</span> /users</code></pre>
+      </div>
+      <div class="method-summary">
+        (<span class="nickname">usersPost</span>)
+      </div>
+      <div class="method-notes">Create a new user (register user)</div>
+
+      <h3 class="field-label">Consumes</h3>
+      This API call consumes the following media types via the
+      <span class="header">Content-Type</span> request header:
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Request body</h3>
+      <div class="field-items">
+        <div class="param">
+          body <a href="#student_inner">student_inner</a> (optional)
+        </div>
+
+        <div class="param-desc">
+          <span class="param-type">Body Parameter</span> &mdash;
+        </div>
+      </div>
+      <!-- field-items -->
+
+      <h3 class="field-label">Return type</h3>
+      <div class="return-type">
+        <a href="#studentResponse">studentResponse</a>
+      </div>
+
+      <!--Todo: process Response Object and its headers, schema, examples -->
+
+      <h3 class="field-label">Example data</h3>
+      <div class="example-data-content-type">
+        Content-Type: application/json
+      </div>
+      <pre class="example"><code>{
+  "_id" : "62a7134243c43243243211ds",
+  "firstName" : "Rares",
+  "lastName" : "Bancescu",
+  "company" : "rares Company",
+  "CNP" : 5123984563132,
+  "mail" : "raresbancescu@yahoo.com",
+  "phone" : 745128654,
+  "adress" : "Str. pacii",
+  "birthDate" : "13-07-2001",
+  "password" : "098f6bcd4621d373cade4e832627b4f6"
+}</code></pre>
+
+      <h3 class="field-label">Produces</h3>
+      This API call produces the following media types according to the
+      <span class="header">Accept</span> request header; the media type will be
+      conveyed by the <span class="header">Content-Type</span> response header.
+      <ul>
+        <li><code>application/json</code></li>
+      </ul>
+
+      <h3 class="field-label">Responses</h3>
+      <h4 class="field-label">201</h4>
+      Successfully added
+      <a href="#studentResponse">studentResponse</a>
+      <h4 class="field-label">400</h4>
+      Invalid request JSON
+    </div>
+    <!-- method -->
+    <hr />
+
+    <h2><a name="__Models">Models</a></h2>
+    [ Jump to <a href="#__Methods">Methods</a> ]
+
+    <h3>Table of Contents</h3>
+    <ol>
+      <li>
+        <a href="#alert"><code>alert</code></a>
+      </li>
+      <li>
+        <a href="#alert_inner"><code>alert_inner</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_200"><code>inline_response_200</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_201"><code>inline_response_201</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_400"><code>inline_response_400</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404"><code>inline_response_404</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404_1"><code>inline_response_404_1</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404_2"><code>inline_response_404_2</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404_3"><code>inline_response_404_3</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404_4"><code>inline_response_404_4</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404_5"><code>inline_response_404_5</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_404_6"><code>inline_response_404_6</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_422"><code>inline_response_422</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_422_1"><code>inline_response_422_1</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_422_2"><code>inline_response_422_2</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_422_3"><code>inline_response_422_3</code></a>
+      </li>
+      <li>
+        <a href="#inline_response_422_4"><code>inline_response_422_4</code></a>
+      </li>
+      <li>
+        <a href="#mailAndPass"><code>mailAndPass</code></a>
+      </li>
+      <li>
+        <a href="#mailAndPass_inner"><code>mailAndPass_inner</code></a>
+      </li>
+      <li>
+        <a href="#notification"><code>notification</code></a>
+      </li>
+      <li>
+        <a href="#notification_inner"><code>notification_inner</code></a>
+      </li>
+      <li>
+        <a href="#student"><code>student</code></a>
+      </li>
+      <li>
+        <a href="#studentResponse"><code>studentResponse</code></a>
+      </li>
+      <li>
+        <a href="#studentResponse_inner"><code>studentResponse_inner</code></a>
+      </li>
+      <li>
+        <a href="#student_inner"><code>student_inner</code></a>
+      </li>
+      <li>
+        <a href="#turbine"><code>turbine</code></a>
+      </li>
+      <li>
+        <a href="#turbineData"><code>turbineData</code></a>
+      </li>
+      <li>
+        <a href="#turbineData_inner"><code>turbineData_inner</code></a>
+      </li>
+      <li>
+        <a href="#turbineResponse"><code>turbineResponse</code></a>
+      </li>
+      <li>
+        <a href="#turbineResponse_inner"><code>turbineResponse_inner</code></a>
+      </li>
+      <li>
+        <a href="#turbine_inner"><code>turbine_inner</code></a>
+      </li>
+    </ol>
+
+    <div class="model">
+      <h3>
+        <a name="alert"><code>alert</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="alert_inner"><code>alert_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">idUser (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 62a7134243c43243243211ds</span>
+        </div>
+        <div class="param">idTurbine (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 43sdf123gjh67854g34fd34d</span>
+        </div>
+        <div class="param">timestamp (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 1546543414765</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_200"><code>inline_response_200</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">data (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: 62ac81d7dc23f97bb4aa7179,Rares,Bancescu,rares
+            Company,5030404127001,raresbancescu@yahoo.com,0765434532,Str
+            pacii,1903-04-03T22:15:36.000Z</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_201"><code>inline_response_201</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">data (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example:
+            62b084bede70d8644cd3628c,62ac81d7dc23f97bb4aa7179,Turbine_France,2012-06-23T00:00:00.000Z,https://www.azom.com/images/Article_Images/ImageForArticle_21371_16457084545525256.jpg,46.34217753926488,2.3882021371256545,504,Peaty,91.5,true,&quot;Running&quot;</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_400"><code>inline_response_400</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Invalid request JSON</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404"><code>inline_response_404</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: User with id 62a7134243c43243243211ds not found</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404_1"><code>inline_response_404_1</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: User with email not found or password wrong</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404_2"><code>inline_response_404_2</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: User with mail rares@yahoo.com not found</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404_3"><code>inline_response_404_3</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: User with 62a7134243c43243243211ds not found</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404_4"><code>inline_response_404_4</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: Turbine with 321bfgjrf5467jbmfj54gnbh not found</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404_5"><code>inline_response_404_5</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: Turbine with name Turbine_California not found</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_404_6"><code>inline_response_404_6</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: No turbine data for turbine with id
+            321bfgjrf5467jbmfj54gnbh</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_422"><code>inline_response_422</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: User with id 62a7134243c43243243211ds doesn&#x27;t exists
+            in the database</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_422_1"><code>inline_response_422_1</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: The buyer/seller id 62a7134243c43243243211ds doesn&#x27;t
+            exist in the database || The seller with id 62a7134243c43243243211ds
+            doesn&#x27;t own the turbine with id rg45634243c43243243gbf45</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_422_2"><code>inline_response_422_2</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: The referenced userId 62a7134243c43243243211ds
+            doesn&#x27;t exists in the database</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_422_3"><code>inline_response_422_3</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: Turbine with id 321bfgjrf5467jbmfj54gnbh doesn&#x27;t
+            exists in the database</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="inline_response_422_4"><code>inline_response_422_4</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">message (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: The referenced turbine with id 321bfgjrf5467jbmfj54gnbh
+            doesn&#x27;t exists in the database</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="mailAndPass"><code>mailAndPass</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="mailAndPass_inner"><code>mailAndPass_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">mail (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Rares</span>
+        </div>
+        <div class="param">password (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: parola</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="notification"><code>notification</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="notification_inner"><code>notification_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">_id (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 32bnh12h6tfv7854g34fd34d</span>
+        </div>
+        <div class="param">idBuyer (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 62a7134243c43243243211ds</span>
+        </div>
+        <div class="param">idSeller (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 43sdf123gjh67854g34fd34d</span>
+        </div>
+        <div class="param">idTurbine (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 321bfgjrf5467jbmfj54gnbh</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="student"><code>student</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="studentResponse"><code>studentResponse</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="studentResponse_inner"><code>studentResponse_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">_id (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 62a7134243c43243243211ds</span>
+        </div>
+        <div class="param">firstName (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Rares</span>
+        </div>
+        <div class="param">lastName (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Bancescu</span>
+        </div>
+        <div class="param">company (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: rares Company</span>
+        </div>
+        <div class="param">CNP (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 5026512387</span>
+        </div>
+        <div class="param">mail (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: raresbancescu@yahoo.com</span>
+        </div>
+        <div class="param">phone (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 654387651</span>
+        </div>
+        <div class="param">adress (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: str. pacii</span>
+        </div>
+        <div class="param">birthDate (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#date">date</a></span> format: date
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Sat Jun 13 00:00:00 GMT 16</span>
+        </div>
+        <div class="param">password (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example: 098f6bcd4621d373cade4e832627b4f6</span
+          >
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="student_inner"><code>student_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">firstName (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Rares</span>
+        </div>
+        <div class="param">lastName (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Bancescu</span>
+        </div>
+        <div class="param">company (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: rares Company</span>
+        </div>
+        <div class="param">CNP (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 5026512387</span>
+        </div>
+        <div class="param">mail (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: raresbancescu@yahoo.com</span>
+        </div>
+        <div class="param">phone (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 654387651</span>
+        </div>
+        <div class="param">adress (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: str. pacii</span>
+        </div>
+        <div class="param">birthDate (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#date">date</a></span> format: date
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Sat Jun 13 00:00:00 GMT 16</span>
+        </div>
+        <div class="param">password (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: parolaparola</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="turbine"><code>turbine</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="turbineData"><code>turbineData</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="turbineData_inner"><code>turbineData_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">windSpeed (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 120</span>
+        </div>
+        <div class="param">turbineWear (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc"><span class="param-type">example: 8</span></div>
+        <div class="param">powerGenerated (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 120</span>
+        </div>
+        <div class="param">eficiency (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 80</span>
+        </div>
+        <div class="param">timeStamp (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#date">date</a></span> format: date
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Sat Jun 13 00:00:00 GMT 16</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="turbineResponse"><code>turbineResponse</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items"></div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="turbineResponse_inner"><code>turbineResponse_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">_id (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: fgt4534243c43243243hgr54</span>
+        </div>
+        <div class="param">userId (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 62a7134243c43243243211ds</span>
+        </div>
+        <div class="param">name (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Turbine_California</span>
+        </div>
+        <div class="param">constructionYear (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#integer">Integer</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 2022</span>
+        </div>
+        <div class="param">imageLink (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example:
+            https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg</span
+          >
+        </div>
+        <div class="param">latitude (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 29.4</span>
+        </div>
+        <div class="param">longitude (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 30.5</span>
+        </div>
+        <div class="param">altitude (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 1013</span>
+        </div>
+        <div class="param">terrain (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Field</span>
+        </div>
+        <div class="param">suitability (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 70</span>
+        </div>
+        <div class="param">isPublic (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#boolean">Boolean</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: false</span>
+        </div>
+        <div class="param">turbineState (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Running</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+    <div class="model">
+      <h3>
+        <a name="turbine_inner"><code>turbine_inner</code></a>
+        <a class="up" href="#__Models">Up</a>
+      </h3>
+
+      <div class="field-items">
+        <div class="param">userId (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 62a7134243c43243243211ds</span>
+        </div>
+        <div class="param">name (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Turbine_California</span>
+        </div>
+        <div class="param">constructionYear (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#integer">Integer</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 2022</span>
+        </div>
+        <div class="param">imageLink (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type"
+            >example:
+            https://static.scientificamerican.com/sciam/cache/file/C14B7568-5269-48B4-984882C9FC97F654_source.jpg</span
+          >
+        </div>
+        <div class="param">latitude (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 29.4</span>
+        </div>
+        <div class="param">longitude (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 30.5</span>
+        </div>
+        <div class="param">altitude (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 1013</span>
+        </div>
+        <div class="param">terrain (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Field</span>
+        </div>
+        <div class="param">suitability (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: 70</span>
+        </div>
+        <div class="param">isPublic (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#boolean">Boolean</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: false</span>
+        </div>
+        <div class="param">turbineState (optional)</div>
+        <div class="param-desc">
+          <span class="param-type"><a href="#string">String</a></span>
+        </div>
+        <div class="param-desc">
+          <span class="param-type">example: Running</span>
+        </div>
+      </div>
+      <!-- field-items -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "data_generation_server",
+  "version": "1.0.0",
+  "description": "Server app for generating new turbine run data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Leahu Vlad",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^3.2.6"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "rest_api",
+  "version": "1.0.0",
+  "description": "Rest API for interacting with the turbine database",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json2csv": "^5.0.7",
+    "md5": "^2.3.0",
+    "mongoose": "^6.3.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

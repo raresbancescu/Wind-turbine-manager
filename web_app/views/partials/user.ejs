@@ -1,0 +1,16 @@
+<div class="user" id="uid<%= user._id %>">
+    <div class="header">
+        <p><%= user._id %> - <%= user.mail %></p>
+        <img src=https://webprojectrdv.s3.amazonaws.com/down.png onclick="expand(this, `<%= user._id %>`)">
+    </div>
+    <div class="content" id="id<%= user._id %>">
+        <p>Name: <%= user.firstName %> <%= user.lastName %></p>
+        <p>Comoany: <%= user.company %></p>
+        <p>CNP: <%= user.CNP %></p>
+        <p>Mail: <%= user.mail %></p>
+        <p>Phone Number: <%= user.phone %></p>
+        <p>Adress: <%= user.adress %></p>
+        <p>Birth Date: <%= user.birthDate.substring(0, 10) %></p>
+        <button onclick="deleteUser(`<%= user._id %>`)">Delete User</button>
+    </div>
+</div>

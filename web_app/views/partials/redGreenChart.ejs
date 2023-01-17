@@ -1,0 +1,13 @@
+<canvas id="<%= canvasId %>"> </canvas>
+<script>
+  createRedGreenChart(
+    [<%= timeLabels%>].map(elem => {const date = new Date(elem); return `${date.getHours()}:${date.getMinutes()}`}),
+    '<%= lineTitle %>',
+    [<%= data %>],
+    document.getElementById("<%= canvasId %>"),
+    '<%= chartName %>',
+    '<%= yAxisLabel %>',
+    '<%= xAxisLabel %>',
+    '<%= isAsccendingGreen %>'
+  )
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <% var dir = process.cwd() %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://webprojectrdv.s3.amazonaws.com/favicon.png">
+    <link rel="stylesheet" href="../../public/css/turbineDetailsStyle.css">
+    <link rel="stylesheet" href="../../public/css/navBarStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../public/scripts/chartCreation.js"></script>
+    <script src="../../public/scripts/protectedRouteScript.js"></script>
+    <title>Turbine Details</title>
+  </head>
+
+  <body>
+    <ul class="sidenav">
+      <li id="state"><div>State</div></li>
+      <li id="wind"><div>Wind</div></li>
+      <li id="energy"><div>Energy</div></li>
+      <li id="efficiency"><div>Efficiency</div></li>
+    </ul>
+
+    <%- include(dir + "/views/partials/navBar") %>
+
+    <div class="wrap">
+      <div id="turbine">
+        <%- include (dir + '/views/partials/turbineDetailsCard', { turbine :
+        turbine, user : user, turbineData : turbineData }) %>
+      </div>
+      <div id="panel">
+        <div id="statePan">
+          <%- include (dir + '/views/partials/cumulativeChart',
+          chartData['stateChart']) %>
+        </div>
+        <div id="windPan">
+          <%- include (dir + '/views/partials/redGreenChart',
+          chartData['windChart']) %>
+        </div>
+        <div id="energyPan">
+          <%- include (dir + '/views/partials/cumulativeChart',
+          chartData['energyChart']) %>
+        </div>
+        <div id="efficiencyPan">
+          <%- include (dir + '/views/partials/redGreenChart',
+          chartData['efficiencyChart']) %>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../public/scripts/turbineDetailsScript.js"></script> 
+    <script src="../../public/scripts/publicownedPageScript.js"></script>
+  </body>
+</html>

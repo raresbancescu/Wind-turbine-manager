@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <% var dir = process.cwd() %> <link rel="icon"
+  href=https://webprojectrdv.s3.amazonaws.com/favicon.png>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../public/scripts/protectedRouteScript.js"></script>
+    <link rel="stylesheet" href="../../public/css/ownedPageStyle.css" />
+    <link rel="stylesheet" href="../../public/css/navBarStyle.css" />
+    <link rel="stylesheet" href="../../public/css/filtersStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300&&family=Oxygen:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../public/scripts/chartCreation.js"></script>
+    <script src="../../public/scripts/renderAllTurbinesMap.js"></script>
+    <title>Owned turbines</title>
+  </head>
+  <body>
+    <%- include(dir + "/views/partials/navBar") %> <%- include(dir +
+    "/views/partials/filters",{companies:{}, queryObject, isPublic:false}) %>
+    <%- include (dir + "/views/partials/map") %>
+    <div class="sideButtonsWrapper">
+      <div
+        class="sideButton tooltip"
+        onclick="location.href='/pages/createTurbine'"
+      >
+        <span class="tooltiptext">Add Turbine</span>
+        <img src="https://webprojectrdv.s3.amazonaws.com/addIcon.png" />
+      </div>
+      <div
+        class="sideButton tooltip"
+        id="exportTurbines"
+        onclick="downloadTurbinesCSV('<%= userId %>')"
+      >
+        <span class="tooltiptext">Export Turbines to CSV</span>
+        <img src="https://img.icons8.com/dusk/344/export-csv.png">
+      </div>
+      <div class="sideButton tooltip" id="importTurbines">
+        <form action="http://localhost:5001/import/turbines" method="post" accept="text/csv" enctype="multipart/form-data" id="csvUploadForm">
+          <input type="file" name="csvfile-input" id="csvfile-input">
+        </form>
+        <span class="tooltiptext">Import Turbines from CSV</span>
+        <img src="https://img.icons8.com/dusk/452/import-csv.png">
+      </div>
+    </div>
+    <script src="../../public/scripts/turbineCSV.js"></script>
+
+    <% if(turbines.length > 0){ %>
+    <div class="cardList">
+      <script>
+        initTurbines(<%- JSON.stringify(turbines) %>)
+      </script>
+      <% for(turbine of turbines) {%> <%- include(dir +
+      "/views/partials/ownedTurbine", {turbine:turbine,
+      chart:chartData[turbine._id + 'chart']}) %> <% } %>
+    </div>
+    <% } else{ %>
+    <div class="no-turbines"><p>You don't own any turbines</p></div>
+    <% } %>
+    <script src="../../public/scripts/publicownedPageScript.js"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0m_3MppCVS4i2BKqDXvqN_Cev4apSnEw&callback=initMap&v=weekly"
+      defer
+    ></script>
+
+    <p>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img
+          style="border: 0; width: 88px; height: 31px"
+          src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="CSS valid!"
+        />
+      </a>
+    </p>
+  </body>
+</html>

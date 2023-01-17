@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <% var dir = process.cwd() %> <link rel="icon"
+  href=https://webprojectrdv.s3.amazonaws.com/favicon.png>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../public/css/adminStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../../public/scripts/protectedRouteAdminScript.js"></script>
+    <script src="../../public/scripts/usersCSV.js"></script>
+    <script src="../../public/scripts/adminScript.js"></script>
+    <title>Admin</title>
+  </head>
+  <body>
+    <% if(users.length > 0){ %>
+    <div class="users">
+      <% for(user of users) {%> <%- include(dir + "/views/partials/user",
+      {user:user}) %> <% } %>
+    </div>
+    <% } else{ %>
+    <div class="no-users"><p>There are no users</p></div>
+    <% } %>
+
+    <div class="exportUsers" onclick="downloadUsersCSV()">
+      <p>Export Users</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/724/724827.png">
+    </div>
+
+    <div class="exitPage" onclick="backToLogin()">
+      <img src=https://webprojectrdv.s3.amazonaws.com/close.png alt="x-icon">
+    </div>
+
+    <script src="../../public/scripts/adminScript.js"></script>
+    <p>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img
+          style="border: 0; width: 88px; height: 31px"
+          src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="CSS valid!"
+        />
+      </a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WiW (Wind Turbine Web Manager)</title>
+  </head>
+
+  <body
+    prefix="schema: https://schema.org/"
+    prefix="sa:https://ns.science.ai/"
+    itemscope=""
+    itemtype="http://schema.org/WebPage"
+  >
+    <article typeof="schema:ScholarlyArticle">
+      <header>
+        <h1>WiW (Wind Turbine Web Manager)</h1>
+      </header>
+      <div role="contentinfo">
+        <section id="authors" typeof="sa:AuthorsList">
+          <h2>Authors</h2>
+          <ul>
+            <li typeof="sa:ContribuitorRole" property="schema:author">
+              <span typeof="sa:Person">
+                <meta property="schema:givenName" content="Daniel" />
+                <meta property="schema:familyName" content="Apostu" />
+                <span property="schema:name">Daniel Apostu</span>
+              </span>
+              <ul>
+                <li
+                  property="schema:roleContactPoint"
+                  typeof="schema:ContactPoint"
+                >
+                  <a href="mailTo:apostudanbs@gmail.com" property="schema:email"
+                    >apostudanbs@gmail.com</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li typeof="sa:ContribuitorRole" property="schema:author">
+              <span typeof="sa:Person">
+                <meta property="schema:givenName" content="Rareș" />
+                <meta property="schema:additionalName" content="Emil" />
+                <meta property="schema:familyName" content="Băncescu" />
+                <span property="schema:name">Rareș Emil Băncescu</span>
+              </span>
+              <ul>
+                <li
+                  property="schema:roleContactPoint"
+                  typeof="schema:ContactPoint"
+                >
+                  <a
+                    href="mailTo:raresbancescu@yahoo.com"
+                    property="schema:email"
+                    >raresbancescu@yahoo.com</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li typeof="sa:ContribuitorRole" property="schema:author">
+              <span typeof="sa:Person">
+                <meta property="schema:givenName" content="Vlad" />
+                <meta property="schema:additionalName" content="Iulius" />
+                <meta property="schema:familyName" content="Leahu" />
+                <span property="schema:name">Vlad Iulius Leahu</span>
+              </span>
+              <ul>
+                <li
+                  property="schema:roleContactPoint"
+                  typeof="schema:ContactPoint"
+                >
+                  <a
+                    href="mailTo:leahu.vlad.iulius@gmail.com"
+                    property="schema:email"
+                    >leahu.vlad.iulius@gmail.com</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <section id="table-of-contents">
+        <h2>Table of contents</h2>
+        <ul>
+          <li>
+            <a href="#authors">Authors</a>
+          </li>
+          <li>
+            <a href="#introduction">1. Introduction</a>
+            <ul>
+              <li><a href="#introduction-purpose">1.1 Purpose</a></li>
+              <li><a href=" #conventions">1.2 Document Conventions</a></li>
+              <li>
+                <a href="#audience"
+                  >1.3 Intended Audience and Reading Suggestions</a
+                >
+              </li>
+              <li><a href="#product-scope">1.4 Product Scope</a></li>
+              <li><a href="#product-references">1.5 References</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#overall">2. Overall Description</a>
+            <ul>
+              <li>
+                <a href="#product-perspective">2.1 Product Perspective</a>
+              </li>
+              <li><a href="#product-functions">2.2 Product Functions</a></li>
+              <li><a href="#users">2.3 User Classes and Characteristics</a></li>
+              <li>
+                <a href="#operating-environment">2.4 Operating Environment</a>
+              </li>
+              <li>
+                <a href="#constraints"
+                  >2.5 Design and Implementation Constraints</a
+                >
+              </li>
+              <li><a href="#documentantion">2.6 User Documentation</a></li>
+              <li>
+                <a href="#dependencies">2.7 Assumptions and Dependencies</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#external">3. External Interface Requirements</a>
+            <ul>
+              <li>
+                <a href="#user-interface">3.1 User Interfaces</a>
+                <ul>
+                  <li>
+                    <a href="#landing-page">3.1.1 Landing Page</a>
+                  </li>
+                  <li>
+                    <a href="#login-page-interface"
+                      >3.1.2 Login Page Intreface</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#sign-up-page-interface"
+                      >3.1.3 Sign Up Page Interface</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#account-info-page">3.1.4 Account Info Page</a>
+                  </li>
+                  <li>
+                    <a href="#public-turbines-page"
+                      >3.1.5 Public Turbines Page</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#owned-turbines-page">3.1.6 Owned Turbines Page</a>
+                  </li>
+                  <li>
+                    <a href="#turbine-details-page"
+                      >3.1.7 Turbine Details Page</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#add-turbine-page">3.1.8 Add Turbine Page</a>
+                  </li>
+                  <li>
+                    <a href="#reset-password-page">3.1.9 Reset Password Page</a>
+                  </li>
+                  <li>
+                    <a href="#notifications-page">3.1.10 Notification Page</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#hardware-interface">3.2 Hardware Interfaces</a></li>
+              <li><a href="#software-interface">3.3 Software Interfaces</a></li>
+              <li>
+                <a href="#communications-interface"
+                  >3.4 Communications Interfaces</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#system-features">4. System Features</a>
+            <ul>
+              <li>
+                <a href="#account-management-feature">4.1 Account Management</a>
+              </li>
+              <li>
+                <a href="#card-view-feature">4.2 Card View</a>
+              </li>
+              <li>
+                <a href="#detailed-view-feature">4.3 Detailed View</a>
+              </li>
+              <li>
+                <a href="#transfer-feature">4.4 Transfer</a>
+              </li>
+              <li>
+                <a href="#filter-search-feature">4.5 Filter and Search</a>
+              </li>
+              <li>
+                <a href="#notifications-feature">4.6 Notifications</a>
+              </li>
+              <li>
+                <a href="#general-stats-feature">4.7 General Stats</a>
+              </li>
+              <li>
+                <a href="#turbine-creation-feature">4.8 Turbine Creation</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#non-functional">5. Other Nonfunctional Requirements</a>
+            <ul>
+              <li><a href="#performance">5.1 Performance Requirements</a></li>
+              <li><a href="#safety">5.2 Safety Requirements</a></li>
+              <li><a href="#security">5.3 Security Requirements</a></li>
+              <li><a href="#software">5.4 Software Quality Attributes</a></li>
+              <li><a href="#buisness">5.5 Buisness Rules</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#other-requirements">Other Requirements</a>
+          </li>
+        </ul>
+      </section>
+      <section typeof="sa:Abstract" role="doc-introduction" id="introduction">
+        <h2>1. Introduction</h2>
+        <section id="introduction-purpose">
+          <h3>1.1 Purpose</h3>
+          <p>
+            This SRS specifies the requirements for the Wind Turbine Web Manager
+            app, v1.0. The product's scope consists of a web application, an API
+            and also a RSS feed that delivers information available in the web
+            app.
+          </p>
+        </section>
+
+        <section id="conventions">
+          <h3>1.2 Document Conventions</h3>
+          <ul>
+            <li>
+              The document is based on the template
+              <cite typeof="citation">
+                <a href="https://github.com/rick4470/IEEE-SRS-Tempate">
+                  IEEE System Requirements Specification Template
+                </a> </cite
+              >.
+            </li>
+            <li>
+              This document repects the
+              <cite typeof="citation"
+                ><a href="https://w3c.github.io/scholarly-html/"
+                  >Scholarly HTML specification</a
+                ></cite
+              >
+            </li>
+            <li>
+              Priorities for higher-level requirements are assumed to be
+              inherited by detailed requirements.
+            </li>
+            <li>Citations are specified in italics.</li>
+            <li>
+              References to the elements of a web page use a
+              <code>code-like</code> font.
+            </li>
+            <li>Priorities for functionalities are higlighted in bold.</li>
+          </ul>
+        </section>
+        <section id="audience">
+          <h3>1.3 Intended Audience and Reading Suggestions</h3>
+          <p>
+            This document is intended for the development team and for the
+            teachers that are going to be grading the product and documentation.
+            For the first review that is going to take place in the 8th week,
+            the relevant sections are section
+            <a href="#external">3. External Interface Requirements</a> and
+            <a href="#system-features">4. System Features.</a>
+          </p>
+        </section>
+        <section id="product-scope">
+          <h3>1.4 Product Scope</h3>
+          <p>
+            The Wind Turbine Web Manager is intended to help managers and
+            business owners to manage their owned wind turbines by letting them
+            visualize the state of a turbine at any moment through the web app,
+            transfer wind turbines between users, notify the owner when in need
+            of maintenance, or obtain formated data through an API or RSS feed.
+          </p>
+        </section>
+        <section id="product-references" typeof="sa:ReferenceList">
+          <h3>1.5 References</h3>
+          <ul>
+            <li
+              class="ref"
+              typeof="schema:ScholarlyArticle"
+              resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-exam.html"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Buraga</span>
+                <span property="schema:givenName">Sabin</span>.
+                <span property="schema:additionalName">Corneliu</span>
+              </span>
+              <cite property="schema:name"
+                >Tehnologii Web proiecte practice</cite
+              >
+              <span
+                property="schema:isPartOf"
+                typeof="schema:PublicationVolume"
+              >
+                <span property="schema:isPartOf" typeof="schema:Periodical">
+                  <span property="schema:name">FII UAIC Tehnologii Web.</span>
+                </span>
+              </span>
+            </li>
+            <li
+              class="ref"
+              typeof="schema:ScholarlyArticle"
+              resource="https://github.com/rick4470/IEEE-SRS-Tempate"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">H</span>
+                <span property="schema:givenName">Rick</span>.
+              </span>
+              <cite property="schema:name">IEEE-Template.</cite>
+              <span property="schema:isPartOf" typeof="schema:Periodical">
+                <span property="schema:name">GitHub</span>
+              </span>
+            </li>
+            <li
+              class="ref"
+              typeof="schema:ScholarlyArticle"
+              resource="https://mateimicu.github.io/tw/proiecte/lista-proiecte/"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Micu</span>
+                <span property="schema:givenName">Matei</span>.
+              </span>
+              <cite property="schema:name">Lista Proiecte</cite>
+              <span property="schema:isPartOf" typeof="schema:Periodical">
+                <span property="schema:name">FII UAIC Tehnologii Web.</span>
+              </span>
+            </li>
+            <li
+              class="ref"
+              typeof="schema:ScholarlyArticle"
+              resource="https://w3c.github.io/scholarly-html/"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Siegman</span>
+                <span property="schema:givenName">Tzviya</span>.
+              </span>
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Berjon</span>
+                <span property="schema:givenName">Robin</span>.
+              </span>
+              <cite property="schema:name">Scholarly HTML Comunity Draft</cite>
+              <span property="schema:isPartOf" typeof="schema:Periodical">
+                <span property="schema:name">Scholarly HTML</span>
+              </span>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <section typeof="sa:MaterialsAndMethods" role="doc-chapter" id="overall">
+        <h2>2. Overall Description</h2>
+        <section id="product-perspective">
+          <h3>2.1 Product Perspective</h3>
+          <p>
+            This product originates from one of the project proposals for the
+            Web Technologies course, class 2A6, a project of category M. It is a
+            new, self-contained product which contains the following subsystems:
+          </p>
+          <figure typeof="sa:image" id="subsystems-diagram">
+            <img
+              src=https://webprojectrdv.s3.amazonaws.com/context.jpg
+              style="width: 400px; height: 1000px"
+              alt="A diagram of the context of the application"
+              class="diagram-image"
+            />
+            <figcaption>The context of the application</figcaption>
+          </figure>
+          <figure typeof="sa:image" id="subsystems-diagram">
+            <img
+              src=https://webprojectrdv.s3.amazonaws.com/container1.jpg
+              style="width: 1200px; height: 600px"
+              alt="A diagram of the Web App Container"
+              class="diagram-image"
+            />
+            <figcaption>The container of Rest API</figcaption>
+          </figure>
+          <figure typeof="sa:image" id="subsystems-diagram">
+            <img
+              src=https://webprojectrdv.s3.amazonaws.com/container2.jpg
+              style="width: 1000px; height: 600px"
+              alt="A diagram of the Web App Container"
+              class="diagram-image"
+            />
+            <figcaption>The container of Rest API</figcaption>
+          </figure>
+        </section>
+        <section id="product-functions">
+          <h3>2.2 Product Functions</h3>
+          <ul>
+            <li>Account features</li>
+            <li>
+              <ul>
+                <li>Users can manage an account inside the app.</li>
+              </ul>
+            </li>
+            <li>Card view features</li>
+            <li>
+              <ul>
+                <li>
+                  Users can see restricted info about public wind turbines owned
+                  by other users.
+                </li>
+                <li>Users can see detailed info about turbines they own.</li>
+              </ul>
+            </li>
+            <li>General stats features</li>
+            <li>
+              <ul>
+                <li>
+                  Users can see statistics about all their turbines as a total.
+                </li>
+              </ul>
+            </li>
+            <li>Detailed view features</li>
+            <li>
+              <ul>
+                <li>Users can see detailed info about each turbine.</li>
+                <li>Users can change the visibility of a turbine.</li>
+                <li>Users can create new turbines in a suitable location.</li>
+              </ul>
+            </li>
+            <li>Turbine creation features</li>
+            <li>
+              <ul>
+                <li>Users can create new turbines in a suitable location.</li>
+              </ul>
+            </li>
+            <li>Filtering Features</li>
+            <li>
+              <ul>
+                <li>Users can filter through public or private turbines.</li>
+                <li>Users can search public or private turbines by name.</li>
+              </ul>
+            </li>
+            <li>Transfer features</li>
+            <li>
+              <ul>
+                <li>
+                  Users can make transfers of wind turbines between accounts.
+                </li>
+              </ul>
+            </li>
+            <li>Notifications features</li>
+            <li>
+              <ul>
+                <li>
+                  The system should notify users if a turbine experiences an
+                  abnormal event or if they receive a request for a transfer.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section id="users">
+          <h3>2.3 Uses Classes and Characteristics</h3>
+          <p>
+            The sole users of this application are managers that deal with a
+            business's resources in terms of energy production. Through the
+            application they can monitor the state of the turbines, they can
+            stop them if needed and they can monitor the efficiency and output
+            of the stations
+          </p>
+        </section>
+
+        <section id="operating-environment">
+          <h3>2.4 Operating Environment</h3>
+          <p>
+            The app's v1.0 version should run as expected on any of the newer
+            secure versions of modern browsers (Firefox 88-98, Chrome 93-99,
+            Opera 72-83, Safari 11.1.1-15.2).
+          </p>
+        </section>
+
+        <section id="constraints">
+          <h3>2.5 Design and Implementation Constraints</h3>
+          <p>
+            The main constraints are the fact that according to grading policy,
+            the developers aren't allowed to use frontend or backend frameworks,
+            and all other tools need to have an open license. As such, for the
+            development of the interface we are restricted to HTML5, CSS3 and
+            Javascript, and for the backend we'll also use Javascript through
+            node.js, but without the use of a framework for web servers like
+            express.
+          </p>
+        </section>
+
+        <section id="documentantion">
+          <h3>2.6 User Documentation</h3>
+          <p>
+            A relevant guide to using the app will be available for users
+            through the landing page of the web app.
+          </p>
+        </section>
+
+        <section id="dependencies">
+          <h3>2.7 Assumptions and Dependencies</h3>
+          <p>
+            The Wind Turbine Web Manager relies on a series of APIs like Google
+            Maps API and OpenWeather API to provide relevant data to our virtual
+            Wind Turbines, to help when deciding the suitability of a new place
+            for placing a wind turbine, and to illustrate data, so any changes
+            to these API's specifications will inevitably lead to changes in the
+            application. The development team will also rely on libraries like
+            Chart.js for displaying data, so the app might also be in need of an
+            update as dependencies update.
+          </p>
+        </section>
+      </section>
+
+      <section typeof="sa:MaterialsAndMethods" role="document" id="external">
+        <h2>3. External Interface Requirements</h2>
+        <section id="user-interface">
+          <h3>3.1 User Interface</h3>
+          <p>
+            A user can interact in the Graphical User Interface with the
+            following pages:
+          </p>
+          <ul>
+            <li><a href="http://localhost:5001/pages">Landing Page</a></li>
+            <li><a href="http://localhost:5001/pages/login">Login Page Interface</a></li>
+            <li><a href="http://localhost:5001/pages/register">Sign Up Page Interface</a></li>
+            <p>After logging in:</p>
+            <li><a href="http://localhost:5001/pages/userDetails">Account Info Page</a></li>
+            <li><a href="http://localhost:5001/pages/public">Public Turbines Page</a></li>
+            <li><a href="http://localhost:5001/pages/owned">Owned Turbines Page</a></li>
+            <li><a href="http://localhost:5001/pages/turbineDetails/:turbineId">Turbine Details Page</a></li>
+            <li><a href="http://localhost:5001/pages/createTurbine">Add Turbine Page</a></li>
+          </ul>
+          <p>
+            The dominant theme and color in the app's interface is the sky's
+            blue and white color scheme.
+          </p>
+          <section id="landing-page">
+            <h4>3.1.1 Landing Page</h4>
+            <p>
+              On the <a href="#landing-page">landing page</a> there are 2
+              buttons, the <code>Login</code> one leading to the login page and
+              the <code>Get started</code> one to a guide on how to use our app.
+            </p>
+            <figure typeof="sa:image" id="landing-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/landing.jpg
+                style="width: 700px; height: 330px"
+                alt="Screenshot of landing page"
+                class="interface-image"
+              />
+              <figcaption>Landing Page Design</figcaption>
+            </figure>
+          </section>
+          <section id="login-page-interface">
+            <h4>3.1.2 Login Page Intreface</h4>
+            <p>
+              On the
+              <a href="#login-page-interface">login page</a> there is a window,
+              containing the field which must be filled with the registered user's
+              info before pressing the <code>Log in</code> button, which will lead
+              to their <a href="#owned-turbines-page">owned turbines page</a>.
+              The <code>Forgot password</code> button leads the user to the 
+              <a href="#reset-password-page">reset password page</a>.
+              The <code>Register</code> button leads the user to the 
+              <a href="#sign-up-page-interface">register page</a> if
+              the user wants to create a new account.
+            </p>
+            <figure typeof="sa:image" id="login-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/login.jpg
+                style="width: 800px; height: 400px"
+                alt="Screenshot of login page design"
+                class="interface-image"
+              />
+              <figcaption>Login Page Design</figcaption>
+            </figure>
+          </section>
+
+          <section id="sign-up-page-interface">
+            <h4>3.1.3 Sign Up Page Interface</h4>
+            <p>
+              On the
+              <a href="#sign-up-page-interface">register page</a> there is a window,
+              containing the field which must be filled with the registered user's
+              info before pressing the <code>Sign Up</code> button, which will lead
+              to their <a href="#owned-turbines-page">owned turbines page</a>.
+              The <code>Forgot password</code> button leads the user to the 
+              <a href="#reset-password-page">reset password page</a>.
+              The <code>Login</code> button leads the user to the 
+              <a href="#login-page-interface">log in page</a> if
+              the user wants to log in with an existing account.
+            </p>
+            <figure typeof="sa:image" id="sign-up-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/register.jpg
+                style="width: 800px; height: 400px"
+                alt="Figma sign up page design"
+                class="interface-image"
+              />
+              <figcaption>Sign Up Page Design</figcaption>
+            </figure>
+          </section>
+          <section id="account-info-page">
+            <h4>3.1.4 Account Info Page</h4>
+            <p>
+              In the <a href="#account-info-page">account info page</a>, a user
+              is able to change any of it's account data as long as it is still
+              valid, and by pressing <code>Done</code> he is taken to the
+              <a href="#owned-turbines-page">owned turbines page</a>.
+            </p>
+            <figure typeof="sa:image" id="account-info-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/userDetails.jpg
+                style="width: 1400px; height: 600px"
+                alt="Figma account info page design"
+                class="interface-image"
+              />
+              <figcaption>Accoount Info Page Design</figcaption>
+            </figure>
+          </section>
+
+          <section id="public-turbines-page">
+            <h4>3.1.5 Public Turbines Page</h4>
+            <p>
+              Interacting with the navbar above the page an user can go to the
+              page containing the turbines they own by accessing
+              <code>Owned</code>, they can see the turbines whose info is
+              public by pressing <code>Public</code>, through pressing the
+              <code>bell icon</code> they are redirected to a page with their latest
+              notifications, and by pressing the <code>3 line menu</code> they
+              have access to the logout button which takes them back to the
+              <a href="#landing-page">landing page</a>, and by pressing
+              <code>Account</code> they are redirected to the
+              <a href="#account-info-page">account info page</a>.
+            </p>
+            <p>
+              Under the navbar in the filter section, they can use the
+              <code>search bar</code> to look for a turbine with a specific
+              name, or use the filters to to only see turbines that conform to
+              the <code>filter</code>. Under the filter section there are rows
+              of cards containing data about each public wind turbine(their
+              <code>name</code>, <code>location</code> and
+              their <code>wear</code>
+              as a color inside the spinner in the top left of the card). By
+              clicking one of the cards the user gets to see an overlay with
+              more detailed information(picture, contact data for the owner,
+              stats about the wind turbines, the wear of the turbine over time).
+            </p>
+            <figure typeof="sa:image" id="public-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/public.jpg
+                style="width: 1200px; height: 600px"
+                alt="Figma public page design"
+                class="interface-image"
+              />
+              <figcaption>Public Page Design</figcaption>
+            </figure>
+            <figure typeof="sa:image" id="line-menu-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/dropdown.jpg
+                style="width: 200px; height: 240px"
+                alt="Figma line menu dropdown"
+                class="interface-image"
+              />
+              <figcaption>Line Menu Design</figcaption>
+            </figure>
+            <figure typeof="sa:image" id="overlay-card-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/card.jpg
+                style="width: 800px; height: 400px"
+                alt="Figma detailed overlay card"
+                class="interface-image"
+              />
+              <figcaption>Detailed Card Design</figcaption>
+            </figure>
+          </section>
+          <section id="owned-turbines-page">
+            <h4>3.1.6 Owned Turbines Page</h4>
+            <p>
+              At the top of the page there is the same navbar as in the
+              <a href="#public-turbines-page">Public Turbines Page</a>. Under
+              the navbar in the filter section, they can use the
+              <code>search bar</code> to look for a turbine with a specific
+              name, or use the <code>filters</code> to only see turbines that
+              conform to the filter.
+            </p>
+            <p>
+              By pressing the <code>+</code> button, the user is redirected to
+              the <a href="#add-turbine-page">add turbine page</a>. In the
+              remaining space, there are cards that contain detailed info about
+              each turbine, an image of the turbine and a graph of its wear over
+              time. By pressing the <code>Details</code> button on any of the
+              pages, the user accesses the
+              <a href="#turbine-details-page">turbine details page</a> for that
+              turbine.
+            </p>
+            <figure typeof="sa:image" id="owned-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/owned.jpg
+                style="width: 1200px; height: 600px"
+                alt="Screenshot of owned turbines page"
+                class="interface-image"
+              />
+              <figcaption>Owned Turbines Page Design</figcaption>
+            </figure>
+          </section>
+          <section id="turbine-details-page">
+            <h4>3.1.7 Turbine Details Page</h4>
+            <p>
+              At the top of the page there is the same navbar as in the
+              <a href="#public-turbines-page">Public Turbines Page</a>. Below
+              the navbar the user can see a card, with data about himself, a
+              picture of the turbine, and the year of construction and the
+              turbines total energy production. Below the user can
+              find 3 buttons, <code>Stop</code> stops the turbine until
+              pressed again, <code>Delete</code> removes the turbine from the
+              user's account, <code>Set private</code> sets the turbine as
+              invisible to the public.(<code>Start</code> if the turbine is 
+              stoppde and <code>Set public</code> if the turbine is private).
+            </p>
+            <p>
+              On the left hand side of the page there is a
+              <code>navbar</code> with 5 sections, each of them showing
+              different information below the existent card:
+            </p>
+            <ul>
+              <li>
+                <code>State</code> brings up a chart showing the wear over time.
+              </li>
+              <li>
+                <code>Wind</code> shows a graph with the changes in wind speed
+                over time.
+              </li>
+              <li>
+                <code>Energy</code> illustrates a progression with the amount
+                of energy produced.
+              </li>
+              <li>
+                <code>Efficiency</code> illustrates the changes in efficiency of
+                the turbine.
+              </li>
+            </ul>
+            <figure typeof="sa:image" id="turbine-details-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/turbineDetails.jpg
+                style="width: 1200px; height: 600px"
+                alt="Figma Turbines details page opened showing the 'Energie' section"
+                class="interface-image"
+              />
+              <figcaption>Turbine Details Energie Section Design</figcaption>
+            </figure>
+          </section>
+          <section id="add-turbine-page">
+            <h4>3.1.8 Add Turbine Page</h4>
+            <p>
+              On this page the user can add a new wind turbine to his account,
+              by choosing a location on the <code>map</code> on the left
+              side, for which he will get data about the location's coordinates
+              and the suitability of placing a turbine there. On the left side
+              he can fill up the data of the turbine that isn't autofilled and
+              press <code>Create</code> to add it to his account.
+            </p>
+            <figure typeof="sa:image" id="add-turbine-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/createTurbine.jpg
+                style="width: 1200px; height: 600px"
+                alt="Figma design of the add turbine menu page"
+                class="interface-image"
+              />
+              <figcaption>Add Turbine Menu Page Design</figcaption>
+            </figure>
+          </section>
+          <section id="reset-password-page">
+            <h4>3.1.9 Reset Password Page</h4>
+            <p>
+              On this page, the user will fill the <code>Email</code> field 
+              withe the mail address for which they wish to reset the 
+              password. When the <code>Done</code> button is clicked, 
+              and email containing a new temporary password which can be
+              used to log into the account. The user can later change
+              their password in the <a href="#account-info-page">account 
+              details page</a>.
+            </p>
+            <figure typeof="sa:image" id="reset-password-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/resetPassword.jpg
+                style="width: 1200px; height: 600px"
+                alt="Figma design of the reset password page"
+                class="interface-image"
+              />
+              <figcaption>Add Turbine Menu Page Design</figcaption>
+            </figure>
+          </section>
+
+          <section id="notifications-page">
+            <h4>3.1.10 Notifications Page</h4>
+            <p>
+              On this page, a user can manage the notifications they receive 
+              about purchase requests from other users and alerts about 
+              their owned turbines. Pressing the <code>Accept</code> button
+              will transfer the requested turbine to the buyer and the
+              <code>Decline</code> button will refuze the offer. In an
+              alert tab, pressing the <code>Check it out</code> button
+              will redirect the to the user <a href="#turbine-details-page">turbine 
+              details page</a> of the turbine for which the alert was generated.
+              Pressing the <code>X</code> button witl ignore the alert.
+            </p>
+            <figure typeof="sa:image" id="add-turbine-img">
+              <img
+                src=https://webprojectrdv.s3.amazonaws.com/pages/notifications.jpg
+                style="width: 1200px; height: 600px"
+                alt="Figma design of the add turbine menu page"
+                class="interface-image"
+              />
+              <figcaption>Notifications Page Design</figcaption>
+            </figure>
+          </section>
+        </section>
+        <section id="hardware-interface">
+          <h3>3.2 Hardware Interfaces</h3>
+          <p>
+            The web app can be used on all devices which support a modern GUI
+            web browser (Google Chrome, Mozilla Firefox, Safari, Edge, Opera,
+            etc), like computers, laptops, mobile devices(Tablets, smart
+            phones), and have a screen width bigger than Samsung Edge, as the
+            the design of the app is responsive and can adapt to different
+            screen sizes. For the API the HTTP protocol is used and data is sent
+            and received in json format.
+          </p>
+        </section>
+        <section id="software-interface">
+          <h3>3.3 Software Interfaces</h3>
+          <p>
+            To obtain data related to users, for example in the case of
+            authentication, our application interacts with a MongoDB database
+            through javascript. To obtain data related to information about the
+            wind turbines, the application makes GET requests to our API which
+            returns formatted data based on the request. For creating a new
+            turbine a POST request is used. For the user interface Chart.js is
+            used to display charts, and Google Maps API to display location
+            info. For sending notifications the Notification API will be used.
+            Javascript is also used to maintain responsive design as a means of
+            improving user experience.
+          </p>
+        </section>
+        <section id="communications-interface">
+          <h3>3.4 Communications Interfaces</h3>
+          <p>
+            The web app requires an internet connection to be used. For
+            communication with the API the app uses the HTTP protocol, and for
+            sending notification emails to users we'll use the nodemailer
+            node.js package, which uses the SMTP protocol.
+          </p>
+        </section>
+      </section>
+      <section
+        typeof="sa:MaterialsAndMethods"
+        role="document"
+        id="system-features"
+      >
+        <h2>4. System Features</h2>
+        <section id="account-management-feature">
+          <h3>4.1 Account Management</h3>
+          <p>
+            This <b>high priority</b> feature provides users the capability to
+            login if they have an account or sign up to the web application by
+            providing personal data, and manage their info through the
+            <a href="#account-info-page">account info page</a>.
+          </p>
+          <section id="account-functional-requirements"></section>
+            <h4>Functional Requirements</h4>
+            <p>
+              In the <a href="#login-page-interface">login page</a>, if the user
+              inputs an email and password that don't belong to any registered
+              account and tries to log in, he will be informed with a red
+              warning text below the fields that either the email or password is
+              wrong.
+            </p>
+            <p>
+              In the <a href="#sign-up-page-interface">Sign Up Page</a>, after the
+              <code>Done</code> button has been pressed, for fields
+              <code>First name</code>, <code>Name</code> and <code>Company</code> the
+              server will verify that they have a certain length, for
+              <code>Mail</code> and <code>Phone Number</code> verify that a valid
+              phone number and email address has been filled. The
+              <code>CNP</code> field can be validated according to the CNP
+              validation formula, <code>Adresa</code> is a select element from
+              which the user can select their county, and
+              <code>Data Nastere</code> a input element of type date, both of
+              them validated by the CNP. For the <code>Password</code> a
+              strength analysis should be implemented. If any of the form
+              elements are invalid, the sign up fails and the user is informed
+              with warning text which fields failed the verification.
+            </p>
+            <p>
+              In the <a href="#account-info-page">account info page</a>, the same
+              verifications are done for any of the fields changed as in the
+              <a href="#sign-up-page-interface">sign up page</a>. To change the
+              current password the user needs to input the old and the new
+              password.
+            </p>
+          </section>
+        </section>
+        <section id="card-view-feature">
+          <h3>4.2 Card View</h3>
+          <p>
+            This <b>high priority</b> feature allows the user to see limited
+            info about public turbines and owned turbines in the from of cards
+            with varying level of detail, depending on if a turbine is owned by
+            the user or is visible publicly.
+          </p>
+          <section id="card-view-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              In the <a href="#public-turbines-page">public turbines page</a>, a
+              user will see a grid of cards, each containing the name, wear,
+              location and company of a public wind turbine. If there are no
+              such turbines, in the middle of the screen will be displayed the
+              message <code>“There are no public turbines available for viewing”</code>.
+              By clicking on a card, an overlay is displayed, showing the
+              <code>name</code>, <code>year of construction</code>, and
+              <code>average energy production</code> of the turbine, the
+              <code>company</code>, <code>email</code> and
+              <code>phone number</code> of the owner, an
+              <code>image of the turbine</code> and a
+              <code>chart showing the wear over time</code>.
+            </p>
+            <p>
+              On the <a href="#owned-turbines-page">owned turbines page</a>, the
+              cards displayed by default have the same level of detail as the
+              cards on the
+              <a href="#public-turbines-page">public turbines page</a>
+              after they have been clicked.
+            </p>
+          </section>
+        </section>
+        <section id="detailed-view-feature">
+          <h3>4.3 Detailed View</h3>
+          <p>
+            This <b>high priority</b> feature let's users see a dedicated page
+            with detailed info about a single one of their owned turbines.
+          </p>
+          <section id="detailed-view-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              In the <a href="#turbine-details-page">turbine details page</a>,
+              the user has the ability to stop a turbine from working(for
+              repairs), to remove the turbine from the account, or to set its
+              visibility as public or private. He should also be able to see the
+              location of the turbine on a map, and have access to charts
+              detailing its energy production, efficiency in terms of potential
+              output to actual output, the variance of wind speed and the
+              progression of wear on the turbine.
+            </p>
+          </section>
+        </section>
+        <section id="transfer-feature">
+          <h3>4.4 Transfer</h3>
+          <p>
+            This <b>medium priority</b> feature should allow the transfer of
+            public turbines between users.
+          </p>
+          <section id="transfer-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              By pressing <code>Purchase</code> inside a detailed view in the
+              <a href="#public-turbines-page">public turbines page</a>, the owner
+              of the turbine for which a transfer request was made should be
+              notified of the request, and he can press <code>Accept</code> in
+              the <code>Notification menu</code> to accept a request, or press
+              <code>Remove</code> to delete the notification. If the request is
+              accepted, the requester will find the transferred turbine in his
+              account, and it will be removed from the user that accepted the
+              request. If the turbine no longer exists in the account of the
+              user that received the request, he will be notified that he can't
+              transfer a turbine that he doesn't own. If the request is refused,
+              the requester will also be notified that he was refused.
+            </p>
+          </section>
+        </section>
+        <section id="filter-search-feature">
+          <h3>4.5 Filter and Search</h3>
+          <p>
+            The filtering feature has a <b>low priority</b> and it should allow
+            users to filter through turbines based on varying criteria.
+          </p>
+          <section id="filter-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              In the <a href="#public-turbines-page">public turbines page</a> and
+              <a href="#owned-turbines-page">owned turbines page</a>, a user
+              should be able to filter through the cards displayed. Using the
+              <code>search bar</code> the user engages in a filtering based on
+              turbine name, and as each letter is typed in the
+              <code>search bar</code>, in the grid will reamain only cards for
+              the turbines whose name starts with the prefix typed in the search
+              bar. If the <code>search bar</code> is empty all cards will be
+              displayed. Through a several select menus, a user can filter
+              through turbines by <code>county</code>, <code>company</code>,
+              <code>wear</code>, and with two number input elements the user can
+              filter by <code>year of construction</code>, selecting the
+              turbines which have been built between two different years.
+            </p>
+          </section>
+        </section>
+        <section id="notifications-feature">
+          <h3>4.6 Notifications</h3>
+          <p>
+            <b>Medium priority</b> feature, users should be notified in the
+            browser and through email about events on their account.
+          </p>
+          <section id="notifications-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              The system will send notifications to users in the following
+              cases:
+            </p>
+            <ul>
+              <li>a turbine they own is worn out and in need of repairs</li>
+              <li>
+                the wind speed exceeds a certain limit and a turbine is in
+                danger
+              </li>
+              <li>
+                another user requested a transfer for one of the current user's
+                turbines
+              </li>
+            </ul>
+            <p>
+              The notifications should be sent through email and browser
+              notifications, and the user should be able to see them by pressing
+              the <code>bell icon </code> from the <code>navbar</code>. From
+              there, if a notification refers to extreme conditions on a turbine
+              they own, by clicking the notification the user will be taken to
+              the <a href="#turbine-details-page">details page</a> of that
+              turbine, if the notification is a request, the user can accept or
+              deny it, and if it is a refusal they can just remove it.
+            </p>
+          </section>
+        </section>
+        <section id="general-stats-feature">
+          <h3>4.7 General Stats</h3>
+          <p>
+            <b>Low priority</b> feature, the system offers visualization for
+            data on all turbines a user owns as an ensemble.
+          </p>
+          <section id="general-stats-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              In the <a href="#owned-turbines-page">owned turbines page</a>,
+              through the <code>Statistici</code> drop down menu, a user should
+              be able to see a visualization of the average amount of energy
+              produced, and one of the average efficiency of all of his
+              turbines. Through the <code>Harta</code> drop down, a user should
+              be able to see a map with the location of all of his turbines.
+            </p>
+          </section>
+        </section>
+        <section id="turbine-creation-feature">
+          <h3>4.8 Turbine Creation</h3>
+          <p>
+            <b>High priority</b> feature, the system must create an interface
+            for adding a new turbine to the users account.
+          </p>
+          <section id="creation-functional-requirements">
+            <h4>Functional Requirements</h4>
+            <p>
+              The user should be able to pick a location on a <code>map</code>,
+              and get the latitude and longitude of the location, the type of
+              terrain and average wind speeds. To more easily inform the user
+              about suitability, the location should also have a computed score
+              about how suitable that location is for placing a turbine, 0 being
+              least optimal and 1 optimal, this score indicated through a
+              <code>slider</code> of different colors, red, yellow, green. The
+              user is also able to assign a <code>name</code> and an
+              <code>image</code> to the turbine he is about to add.
+            </p>
+          </section>
+        </section>
+      </section>
+
+      <section
+        typeof="sa:MaterialsAndMethods"
+        role="document"
+        id="non-functional"
+      >
+        <h2>5. Other Nonfunctional Requirements</h2>
+        <section id="performance">
+          <h3>5.1 Performance Requirements</h3>
+          <p>No performance requirements specified.</p>
+        </section>
+        <section id="safety">
+          <h3>5.2 Safety Requirements</h3>
+          <p>
+            Because in the case of the
+            <a href="#public-turbines-page">public turbines page</a>, the contact
+            info for the owner of each public turbine is available, we advise
+            the owners of the accounts to create a dedicated email address for
+            the web application.
+          </p>
+        </section>
+
+        <section id="security">
+          <h3>5.3 Security Requirements</h3>
+          <p>
+            The app should employ prevention techniques for attacks like Cross
+            Site Scripting and SQL Injection. The app can only store hashed
+            versions of the user's passwords.
+          </p>
+        </section>
+        <section id="software">
+          <h3>5.4 Software Quality Attributes</h3>
+          <p>
+            The application's architecture should follow the MVC pattern, so
+            developers must keep track of separation of concerns. The code
+            should have a focus on flexibility and be open to new features,
+            which is always an option depending on user feedback. The
+            development team must also make sure that the code is unit tested.
+          </p>
+        </section>
+        <section id="buisness">
+          <h3>5.5 Buisness Rules</h3>
+          <p>No business Rules imposed.</p>
+        </section>
+      </section>
+
+      <section typeof="sa:ReferenceList" role="document">
+        <h2 id="other-requirements">Other Requirements</h2>
+        <p>
+          The app should use the MVC architecture and be implemented through
+          micro-services. The import and export of data should use open data
+          formats.The database used can be relational or nosql.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

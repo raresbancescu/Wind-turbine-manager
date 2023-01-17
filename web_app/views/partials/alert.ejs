@@ -1,0 +1,12 @@
+<div class="alert" id="id<%= alert.id %>">
+  <div class="wrapper">
+    <div class="text">
+      [ <%= alert.timeStamp.substring(0, 10) %> <%= alert.timeStamp.substring(11, 19) %>] 
+      <%= alert.user.firstName %> <%= alert.user.lastName %>, there seems to be a problem with your turbine <%=alert.turbine.name %>
+    </div>
+    <div onclick="removeAlert(`<%= alert.id %>`)"><img src=https://webprojectrdv.s3.amazonaws.com/close.png></div>
+  </div>
+  <div>
+    <button onclick="redirectToDetailsPage(`<%= alert.turbine._id %>`, `<%= alert.id %>`)">Check it out</button>
+  </div>
+</div>

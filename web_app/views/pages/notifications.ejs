@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <% var dir = process.cwd() %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://webprojectrdv.s3.amazonaws.com/favicon.png">
+    <script src="../../public/scripts/protectedRouteScript.js"></script>
+    <link rel="stylesheet" href="../../public/css/navbarStyle.css">
+    <link rel="stylesheet" href="../../public/css/notificationsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+    <title>Notifications</title>
+  </head>
+  <body>
+    <%- include(dir + "/views/partials/navBar") %>
+
+    <div class="notification-wrapper">
+      <div class="notifications">Notifications</div>
+      <% for(notification of notifications) {%> <%- include(dir +
+      "/views/partials/notification", {notification:notification}) %> <% } %>
+    </div>
+
+    <div class="alert-wrapper">
+      <div class="alerts">Alerts</div>
+      <% for(alert of alerts) {%> <%- include(dir +
+        "/views/partials/alert", {alert:alert}) %> <% } %>
+    </div>
+    <script src="../../public/scripts/alertsScript.js"></script>
+    <script src="../../public/scripts/notificationsScript.js"></script>
+    <script src="../../public/scripts/publicownedPageScript.js"></script>
+  </body>
+</html>

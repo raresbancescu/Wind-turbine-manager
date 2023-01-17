@@ -1,0 +1,123 @@
+ul.navBar {
+  position: sticky;
+  list-style-type: none;
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  margin: auto;
+  padding: 5px;
+  width: 98%;
+  background: linear-gradient(to left top, #0a0120, #0a0120);
+  box-shadow: 0px 0px 10px -5px black;
+  z-index: 3;
+  border-radius: 10px;
+}
+
+ul.navBar li {
+  font-family: "Jura", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #92CCFF;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: ease-in-out 200ms;
+}
+
+ul.navBar li div {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  color: #7dd7bd;
+}
+
+.menuPopUp {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  width: auto;
+  height: auto;
+  background-color: #0a0120;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  margin-left: -70px;
+  width: auto;
+}
+
+.menuPopUp div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "Jura", sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
+  color: #92CCFF;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.menuPopUp div p {
+  margin: 10px;
+}
+
+.menuPopUp div img {
+  width: 20px;
+  height: 20px;
+  padding-left: 10px;
+}
+
+.menuPopUp div:hover {
+  background-color: #7dd7bd;
+  color: #0a0120;
+  cursor: pointer;
+}
+
+ul.navBar li div .show {
+  visibility: visible;
+}
+
+ul.navBar li div .hidden {
+  visibility: hidden;
+}
+
+#title1 {
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #92CCFF;
+  margin-right: auto;
+}
+
+#title2 {
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #7dd7bd;
+}
+
+@media screen and (max-width: 500px) {
+  ul.navBar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul.navBar li:nth-child(2),
+  ul.navBar li:nth-child(3) {
+    order: 1;
+  }
+}

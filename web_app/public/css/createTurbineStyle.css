@@ -1,0 +1,127 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  letter-spacing: 1px;
+  color: #7dd7bd;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.configuration-panel {
+  width: 50%;
+  height: 100%;
+  background-color: #0a0120;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.1vw;
+}
+
+#map {
+  height: 100%;
+  width: 50%;
+}
+
+.attribute-wrapper {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  background-color: #0a0120;
+  border: 1px solid #7dd7bd;
+}
+
+.attribute {
+  margin: 15px;
+  padding-left: 15px;
+  font-weight: bold;
+  color: #7dd7bd;
+}
+
+#form {
+  height: auto;
+  width: 50%;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-color: #0a0120;
+  border: 1px solid #7dd7bd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #7dd7bd;
+}
+
+#form label {
+  width: 50%;
+  font-weight: bolder;
+  color: #7dd7bd;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+#form input {
+  margin-bottom: 5px;
+  width: 50%;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #0a0120;
+  border: 1px solid #7dd7bd;
+  outline: none;
+  color: #7dd7bd;
+}
+
+::placeholder {
+  color: #7dd7bd;
+}
+
+#form input #image {
+  height: 10px;
+}
+
+#err {
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.setPublic {
+  width: inherit;
+  display: flex;
+  justify-content: flex-start; 
+  height: 25px;
+  align-items: center;
+}
+
+#public {
+  padding: 5px;
+  background-color: white;
+  height: 5px;
+  width: 5px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .attribute-wrapper {
+    width: 70%;
+    height: auto;
+  }
+
+  .configuration-panel {
+    font-size: 2vw;
+  }
+}

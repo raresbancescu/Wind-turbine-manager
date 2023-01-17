@@ -1,0 +1,32 @@
+<% var dir = process.cwd() %>
+<div class="card">
+  <div class="header"><p><%= turbine.name %></p></div>
+  <div class="panel">
+    <div class="attributes">
+      <div class="attribute">Date: <%= turbine.constructionYear.substring(0, 10) %></div>
+      <div class="attribute">Suitability: <%= turbine.suitability %></div>
+      <div class="attribute">Terrain: <%= turbine.terrain %></div>
+      <% if(turbine.turbineState === 'Stopped'){ %>
+        <div class="attribute"><p class="stopped"><%= turbine.turbineState %></p></div>
+      <% } else  %>  
+        <% if(turbine.turbineState === 'Maintenance'){ %>
+          <div class="attribute"><p class="maintenance"><%= turbine.turbineState %></p></div>
+        <% } else { %>  
+        <div class="attribute"><p class="running"><%= turbine.turbineState %></p></div>
+      <% } %>
+      <div class="attribute">
+        <div
+          class="dButton"
+          onclick='location.href="/pages/turbineDetails/<%= turbine._id %>"'
+        >
+          <p>Details</p>
+      </div>
+      </div>
+    </div>
+
+    <div class="imgs">
+      <img src=<%= turbine.imageLink %> alt="Image placeholder" /> 
+      <%- include (dir + '/views/partials/cumulativeChart', chart) %>
+    </div>
+  </div>
+</div>

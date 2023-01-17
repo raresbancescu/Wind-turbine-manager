@@ -1,0 +1,137 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  user-select: none;
+  color: #7dd7bd;
+}
+
+body {
+  background-color: #92ccff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.notifications {
+  background-color: #0a0120;
+  padding: 5px;
+  width: 10%;
+  transition: ease-in-out 500ms;
+}
+
+.notifications:hover {
+  width: 100%;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.alerts {
+  background-color: red;
+  padding: 5px;
+  width: 10%;
+  transition: ease-in-out 500ms;
+}
+
+.alerts:hover {
+  width: 100%;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.notification-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.notification {
+  height: 100px;
+  background-color: #0a0120;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #7dd7bd;
+  border-bottom-right-radius: 20px;
+  transition: ease-in-out 300ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.notification:hover {
+  border-left: 15px solid #7dd7bd;
+}
+
+.notification button,
+.alert button {
+  outline: none;
+  border: none;
+  padding: 5px;
+  background-color: #7dd7bd;
+  color: #0a0120;
+  border: 1px solid #0a0120;
+}
+
+.notification button:hover,
+.alert button:hover {
+  background-color: #0a0120;
+  color: #7dd7bd;
+  border: 1px solid #7dd7bd;
+  cursor: pointer;
+}
+
+.alert-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.alert {
+  height: 100px;
+  background-color: #0a0120;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid red;
+  transition: ease-in-out 300ms;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.alert:hover {
+  border-left: 15px solid red;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.text {
+  width: 90%;
+}
+
+.wrapper div img {
+  width: 20px;
+}
+
+.wrapper div img:hover {
+  cursor: pointer;
+}

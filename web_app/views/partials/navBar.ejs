@@ -1,0 +1,24 @@
+<ul class="navBar">
+  <li id="title1">
+    Wind
+    <span id="title2">Turbine Management</span>
+  </li>
+  <li class="clickable" onclick="location.href='/pages/owned'">Owned</li>
+  <li class="clickable" onclick="location.href='/pages/public'">Public</li>
+  <li>
+    <div onclick="location.href='/pages/notifications'">
+      <img src=https://webprojectrdv.s3.amazonaws.com/images/bell.png
+      alt="bell">
+    </div>
+  </li>
+  <li>
+    <div onclick="showMapOnClick('menu')">
+      <img src=https://webprojectrdv.s3.amazonaws.com/images/menu.png alt="3
+      line menu" />
+      <div class="menuPopUp" id="menu">
+        <div onclick="accountPage()"><img src=https://webprojectrdv.s3.amazonaws.com/account.png><p>Account</p></div>
+        <div onclick="logoutFunction()"><img src=https://webprojectrdv.s3.amazonaws.com/logout.png><p>Log out</p></div>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Turbine</title>
+    <link rel="icon" href="https://webprojectrdv.s3.amazonaws.com/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../public/css/createTurbineStyle.css">
+    <script src="../../public/scripts/renderMap.js"></script>
+    <script src="../../public/scripts/protectedRouteScript.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="map"></div>
+      <div class="configuration-panel">
+        <div class="attribute-wrapper">
+          <div class="attribute"><span id="location"></span></div>
+          <div class="attribute">Latitude: <span id="lat"></span></div>
+          <div class="attribute">Longitude: <span id="lng"></span></div>
+          <div class="attribute">Weather: <span id="wd"></span></div>
+          <div class="attribute">Wind speed: <span id="wind"></span> m/s</div>
+          <div class="attribute">
+            Temperature: <span id="temperature"></span> °C
+          </div>
+          <div class="attribute">
+            Humidity: <span id="humidity"></span> g/m<sup>3</sup>
+          </div>
+          <div class="attribute">Altitude: <span id="altitude"></span> m</div>
+          <div class="attribute">Soil type: <span id="soil-type"></span></div>
+          <div class="attribute">
+            Suitability: <span id="suitability"></span>
+          </div>
+        </div>
+        <form id="form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Turbine name" />
+
+          <label for="cons-date">Construction date</label>
+          <input
+            type="date"
+            id="cons-date"
+            name="cons-date"
+            placeholder="Turbine Construction date"
+          />
+
+          <label for="image">Image Link</label>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            placeholder="Turbine image link"
+          />
+          <div class="setPublic">
+            <div id="public" onclick="togglePublic()"></div>
+            <p>Public</p>
+          </div>
+          <input type="submit" value="Create" />
+        </form>
+        <p>
+          <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img
+              style="border: 0; width: 88px; height: 31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="CSS valid!"
+            />
+          </a>
+        </p>
+
+        <div id="err"></div>
+      </div>
+    </div>
+
+    <script src="../../public/scripts/createTurbineScript.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0m_3MppCVS4i2BKqDXvqN_Cev4apSnEw&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>

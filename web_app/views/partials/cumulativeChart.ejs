@@ -1,0 +1,15 @@
+<canvas id="<%= canvasId %>"> </canvas>
+<script>
+  createCumulativeChart(
+    [<%= timeLabels%>].map(elem => {const date = new Date(elem); return `${date.getHours()}:${date.getMinutes()}`}),
+    '<%= lineTitle %>',
+    [<%= data %>],
+    document.getElementById("<%= canvasId %>"),
+    '<%= chartName %>',
+    '<%= yAxisLabel %>',
+    '<%= xAxisLabel %>',
+    '<%= colorPoints %>',
+    '<%= colorLine %>',
+    '<%= colorUnderLine %>'
+  )
+</script>

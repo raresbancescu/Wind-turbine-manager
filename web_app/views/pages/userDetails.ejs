@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <% var dir = process.cwd() %> 
+  <head>
+    <link rel="icon" href="https://webprojectrdv.s3.amazonaws.com/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../public/css/navBarStyle.css">
+    <link rel="stylesheet" href="../../public/css/userPageStyle.css">
+    <script src="../../public/scripts/protectedRouteScript.js"></script>
+    <title>User details</title>
+  </head>
+
+  <body>
+    <%- include(dir + "/views/partials/navBar") %>
+    <div class="main">
+      <div class="mainforms">
+        <div class="form">
+          <form action="" id="firstForm">
+            <div class="detail">
+              <label for="firstname">First name:</label>
+              <input type="text" id="firstname" name="firstname" value="" />
+            </div>
+            <div class="detail">
+              <label for="secondname">Second name:</label>
+              <input type="text" id="secondname" name="secondname" value="" />
+            </div>
+            <div class="detail">
+              <label for="company">Company:</label>
+              <input type="text" id="company" name="company" value="" />
+            </div>
+            <div class="detail">
+              <label for="CNP">CNP:</label>
+              <input type="number" id="cnp" name="cnp" value="" />
+            </div>
+            <div class="detail">
+              <label for="mail">E-Mail:</label>
+              <input type="email" id="mail" name="mail" value="" />
+            </div>
+            <div class="detail">
+              <label for="phone">Phone:</label>
+              <input type="number" id="phone" name="phone" value="" />
+            </div>
+            <div class="detail">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value="address value"
+              />
+            </div>
+            <div class="detail">
+              <label for="date">Date:</label>
+              <input type="" id="date" name="date" value="2021-06-20" />
+            </div>
+
+            <button class="button" onclick="firstForm()">Done</button>
+          </form>
+          <p class="errorMessage" id="error"></p>
+        </div>
+        <div class="form2">
+          <p class="text">Reset Password</p>
+          <form action="" id="secondForm">
+            <div class="detail">
+              <label for="newpass">New Password:</label>
+              <input type="password" id="newpass" name="newpass" value="" />
+            </div>
+            <div class="detail">
+              <label for="confirmpass">Confirm password:</label>
+              <input type="password" id="confpass" name="confpass" value="" />
+            </div>
+            <button class="button" onclick="secondForm()">Done</button>
+          </form>
+          <p class="errorMessage" id="passvalidation"></p>
+        </div>
+      </div>
+    </div>
+    <script src="../../public/scripts/userDetails.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../public/scripts/publicownedPageScript.js"></script>
+  </body>
+</html>

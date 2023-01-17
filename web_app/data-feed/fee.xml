@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+<channel>
+  <title>Turbine Data Feed</title>
+  <link>http://localhost:5001/pages/feed</link>
+  <description>Feeds data about tubines</description>
+  <image>
+      <url>https://www.xul.fr/xul-icon.gif</url>
+      <link>https://www.xul.fr/en/index.php</link>
+  </image>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+  <item>
+      <title>New Turbine/title>
+      <link>http://localhost:5001/pages/turbineDetails/${turbine._id}</link>
+      <description>New turbine added: turine.name</description>
+  </item>
+</channel>
+</rss> 

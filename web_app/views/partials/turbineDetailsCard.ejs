@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="header"><p><%= turbine.name %></p></div>
+  <div class="wrapper">
+    <div class="details">
+      <div class="attributes">
+        <div class="attribute">Company: <%= user.company %></div>
+        <div class="attribute">Created at <%= turbine.constructionYear.substring(0, 10) %></div>
+        <div class="attribute">Contact: <%= user.mail %>, <%= user.phone %></div>
+        <div class="attribute">Produced energy: <%= turbineData.powerGenerated %> KW</span></div>
+      </div>
+      <div class="image"><img src=<%= turbine.imageLink %> alt="detail image" /></div>
+    </div>
+
+    <div class="buttons">
+      <% if(turbine.turbineState === 'Maintenance'){ %>
+        <button onclick="startTurbine(`<%= turbine._id %>`)">Start</button>
+      <% } else{ %>  
+        <button onclick="maintainTurbine(`<%= turbine._id %>`)">Maintenance</button>
+      <% } %>
+
+      <% if(turbine.isPublic){ %>
+        <button onclick="setPrivate(`<%= turbine._id %>`)">Set Private</button>
+      <% } else{ %>  
+        <button onclick="setPublic(`<%= turbine._id %>`)">Set Public</button>
+      <% } %>
+
+      <button onclick="deleteTurbine(`<%= turbine._id %>`)">Delete</button>
+    </div>
+  </div>
+</div>

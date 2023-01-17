@@ -1,0 +1,119 @@
+body {
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  background-color: #E9FEF7;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  color: #7dd7bd;
+}
+
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+  margin-right: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0a0120;
+  outline: none;
+  border: 1px solid #7dd7bd;
+  color: #7dd7bd;
+  transition: ease-in-out 700ms;
+}
+
+.form {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a0120;
+  border: 1px solid #7dd7bd;
+  align-items: center;
+  justify-content: center;
+}
+
+.form2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0a0120;
+  border: 1px solid #7dd7bd;
+  margin-right: 10%;
+}
+
+form
+{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainforms {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.button {
+  margin-bottom: 10%;
+  margin-top: 10%;
+  width:50%;
+  padding: 10px;
+  
+  background-color: #7dd7bd;
+  outline: none;
+  border: none;
+  color: #0a0120;
+  transition: ease-in-out 300ms;
+}
+
+.button:hover {
+  background-color: #0a0120;
+  color: #7dd7bd;
+  border: 1px solid #7dd7bd;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 20px;
+}
+
+.errorMessage {
+  font-size: 25px;
+  color: red;
+}
+
+@media screen and (max-width: 1000px) {
+  .mainforms
+  {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.form {
+  margin:0;
+  
+}
+
+.form2 {
+  margin: 0;
+  margin-top:5%;
+}
+
+.button{
+  margin-top: 5%;
+}
+
+}

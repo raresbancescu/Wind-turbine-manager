@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <link rel="icon" href="https://webprojectrdv.s3.amazonaws.com/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../public/css/loginStyle.css">
+  <script src="../../public/scripts/protectedRouteLoginScript.js"></script>
+ 
+  <head>
+    <title>Log in</title>
+  </head>
+
+  <body>
+    <p id="title1">
+      Wind
+      <span id="title2">Turbine Management</span>
+    </p>
+    <form class="login">
+      <label aria-hidden="true">Login</label>
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <input type="password" id="password" name="pass" placeholder="Password" />
+      <input id="log" type="submit" value="Log in" />
+      <p id="errormessage"></p>
+      <div class="buttons">
+        <button
+          class="bottomButtons"
+          type="button"
+          onclick="location.href='/pages/resetpass'"
+        >
+          Forgot Password
+        </button>
+        <button
+          class="bottomButtons"
+          type="button"
+          onclick="location.href='/pages/register'"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+     <script src="../../public/scripts/loginScript.js"></script>
+  </body>
+</html>

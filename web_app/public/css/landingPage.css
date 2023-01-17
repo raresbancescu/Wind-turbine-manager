@@ -1,0 +1,78 @@
+html {
+  height: 100%;
+  user-select: none;
+}
+
+body {
+  background: url("https://webprojectrdv.s3.amazonaws.com/images/bgimg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(10, 1, 32, 0.95);
+  width: 40vw;
+  height: 100%;
+}
+
+#moto {
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  font-size: 3vw;
+  color: #7dd7bd;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20%;
+  align-items: center;
+}
+
+.auth {
+  padding: 15px;
+  width: 40%;
+  border: 0;
+  margin-top: 40px;
+  font-family: "Jura", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #0a0120;
+  color: #7dd7bd;
+  transition: 400ms ease-in-out;
+  border: 1px solid #7dd7bd;
+  border-radius: 50px;
+}
+
+.auth:hover {
+  background-color: #7dd7bd;
+  color: #0a0120;
+  cursor: pointer;
+}
+
+#title1 {
+  font-family: "Jura", sans-serif;
+  font-weight: bolder;
+  font-size: 3vw;
+  color: #e9fef7;
+  z-index: 1;
+}
+
+#title2 {
+  font-family: "Jura", sans-serif;
+  font-weight: bolder;
+  font-size: 2vw;
+  color: #7dd7bd;
+}
+
+@media screen and (max-width: 800px) {
+  #auth {
+    padding: 10px;
+    font-family: "Jura", sans-serif;
+    font-size: 9px;
+  }
+}
